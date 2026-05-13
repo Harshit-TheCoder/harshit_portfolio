@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Trail, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
@@ -8,6 +8,13 @@ import { skillsData } from "@/data";
 
 // Flatten and randomize skills
 const allSkills = Object.values(skillsData).flat().sort(() => Math.random() - 0.5);
+
+type ProjectileData = {
+  id: number;
+  startPos: THREE.Vector3;
+  direction: THREE.Vector3;
+  skill: string;
+};
 
 function Cannon({ onFire }: { onFire: (pos: THREE.Vector3, dir: THREE.Vector3) => void }) {
   const groupRef = useRef<THREE.Group>(null);
@@ -95,12 +102,17 @@ function SkillProjectile({
 }) {
   const ref = useRef<THREE.Group>(null);
   const [phase, setPhase] = useState<"traveling" | "burst" | "orbit">("traveling");
-  const travelDist = useRef(0);
-  const orbitAngle = useRef(Math.random() * Math.PI * 2);
-  const targetDist = 10 + Math.random() * 5; // Distance to burst
+  
+  /* eslint-disable react-hooks/purity */
+  const initialOrbit = useMemo(() => Math.random() * Math.PI * 2, []);
+  const initialTargetDist = useMemo(() => 10 + Math.random() * 5, []);
+  const initialIsCyan = useMemo(() => Math.random() > 0.5, []);
+  /* eslint-enable react-hooks/purity */
 
-  // Random color per skill
-  const isCyan = Math.random() > 0.5;
+  const orbitAngle = useRef(initialOrbit);
+  const targetDist = useRef(initialTargetDist);
+  const isCyan = initialIsCyan;
+
   const color = isCyan ? "#06b6d4" : "#a855f7";
 
   useFrame((state, delta) => {
@@ -153,7 +165,7 @@ function SkillProjectile({
 }
 
 export default function ArtillerySystem() {
-  const [projectiles, setProjectiles] = useState<any[]>([]);
+  const [projectiles, setProjectiles] = useState<ProjectileData[]>([]);
   const skillIndex = useRef(0);
 
   const handleFire = (position: THREE.Vector3, direction: THREE.Vector3) => {

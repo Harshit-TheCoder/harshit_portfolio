@@ -7,8 +7,17 @@ import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
+type ProjectType = {
+  id: number;
+  title: string;
+  description: string;
+  features: string[];
+  tags: string[];
+  links: { github?: string; demo?: string; youtube?: string; live?: string };
+};
+
 // Reusing the ProjectCard logic for the dedicated page
-function ProjectCard({ project, index }: { project: any; index: number }) {
+function ProjectCard({ project, index }: { project: ProjectType; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
