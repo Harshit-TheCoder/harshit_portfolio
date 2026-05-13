@@ -68,15 +68,11 @@ export default function CertificationsPage() {
                 {achievement.title}
               </h3>
               
-              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
                 <span className="font-semibold">{achievement.issuer}</span>
                 <span>•</span>
                 <span>{achievement.date}</span>
               </div>
-              
-              <p className="text-sm text-muted-foreground mt-auto">
-                {achievement.description}
-              </p>
             </motion.a>
           ))}
         </div>
