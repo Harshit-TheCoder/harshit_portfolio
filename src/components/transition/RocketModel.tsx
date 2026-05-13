@@ -1,71 +1,74 @@
 "use client";
 
 import React, { useRef, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { Float } from "@react-three/drei";
 
 export default function RocketModel({ active }: { active: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
   const engineRef = useRef<THREE.Mesh>(null);
-  const trailRef = useRef<THREE.Mesh>(null);
+  const { viewport } = useThree();
+  const isMobile = viewport.width < 10;
 
   useFrame((state, delta) => {
     if (!groupRef.current) return;
 
     if (active) {
-      // Acceleration & Camera Drift
-      groupRef.current.position.z += delta * 40;
-      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 2) * 0.1;
+      // High-speed acceleration
+      groupRef.current.position.z += delta * 50;
+      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 4) * 0.05;
+      
+      // Vertical sway
+      groupRef.current.position.y += Math.sin(state.clock.elapsedTime * 10) * 0.02;
       
       // Engine Pulse
       if (engineRef.current) {
-        engineRef.current.scale.setScalar(1 + Math.sin(state.clock.elapsedTime * 20) * 0.2);
+        engineRef.current.scale.setScalar(1 + Math.sin(state.clock.elapsedTime * 25) * 0.3);
       }
     } else {
-      groupRef.current.position.z = -10;
+      groupRef.current.position.z = -15;
+      groupRef.current.position.y = isMobile ? -1 : -2;
     }
   });
 
   return (
-    <group ref={groupRef} position={[0, -2, -10]}>
-      <Float speed={5} rotationIntensity={0.5} floatIntensity={0.5}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
+    <group ref={groupRef} position={[0, isMobile ? -1 : -2, -15]}>
+      <Float speed={8} rotationIntensity={0.2} floatIntensity={0.2}>
+        <group rotation={[Math.PI / 2, 0, 0]} scale={isMobile ? 0.7 : 1}>
           {/* Main Body - Sleek Needle Shape */}
           <mesh>
-            <cylinderGeometry args={[0.05, 0.4, 4, 32]} />
-            <meshStandardMaterial color="#ffffff" metalness={0.9} roughness={0.1} />
+            <cylinderGeometry args={[0.04, 0.3, 3, 16]} />
+            <meshStandardMaterial color="#ffffff" metalness={1} roughness={0.05} />
           </mesh>
           
-          {/* Cockpit - Glowing Glass */}
-          <mesh position={[0, 1.2, 0]}>
-            <sphereGeometry args={[0.3, 32, 32]} />
-            <meshStandardMaterial color="#06b6d4" emissive="#06b6d4" emissiveIntensity={2} transparent opacity={0.8} />
+          {/* Cockpit - Glowing Blue */}
+          <mesh position={[0, 1, 0]}>
+            <sphereGeometry args={[0.25, 16, 16]} />
+            <meshStandardMaterial color="#06b6d4" emissive="#06b6d4" emissiveIntensity={3} transparent opacity={0.9} />
           </mesh>
 
-          {/* Wings - Angular & Minimalist */}
-          <mesh position={[0, -0.5, 0]}>
-            <boxGeometry args={[3, 0.1, 0.8]} />
-            <meshStandardMaterial color="#ffffff" metalness={0.9} />
+          {/* Wings - Razor Sharp */}
+          <mesh position={[0, -0.4, 0]}>
+            <boxGeometry args={[2.5, 0.05, 0.6]} />
+            <meshStandardMaterial color="#ffffff" metalness={1} />
           </mesh>
 
-          {/* Engine - Plasma Glow */}
-          <mesh ref={engineRef} position={[0, -2.1, 0]}>
-            <cylinderGeometry args={[0.4, 0.1, 0.4, 32]} />
-            <meshStandardMaterial color="#a855f7" emissive="#a855f7" emissiveIntensity={10} />
+          {/* Engine - Intense Plasma */}
+          <mesh ref={engineRef} position={[0, -1.6, 0]}>
+            <cylinderGeometry args={[0.3, 0.05, 0.3, 16]} />
+            <meshStandardMaterial color="#a855f7" emissive="#a855f7" emissiveIntensity={15} />
           </mesh>
 
-          {/* Energy Trail */}
-          <mesh ref={trailRef} position={[0, -4, 0]} rotation={[0, 0, 0]}>
-            <cylinderGeometry args={[0.3, 0, 4, 16]} />
-            <meshBasicMaterial color="#06b6d4" transparent opacity={0.3} />
+          {/* Plasma Exhaust Trail */}
+          <mesh position={[0, -3, 0]}>
+            <cylinderGeometry args={[0.25, 0, 3, 12]} />
+            <meshBasicMaterial color="#06b6d4" transparent opacity={0.4} />
           </mesh>
         </group>
       </Float>
 
-      {/* Point lights on the rocket */}
-      <pointLight position={[0, 0, 1]} intensity={2} color="#06b6d4" distance={5} />
-      <pointLight position={[0, -3, 0]} intensity={5} color="#a855f7" distance={10} />
+      <pointLight position={[0, -2, 0]} intensity={10} color="#a855f7" distance={8} />
     </group>
   );
 }
