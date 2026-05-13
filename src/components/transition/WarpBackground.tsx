@@ -6,19 +6,18 @@ import * as THREE from "three";
 
 export default function WarpBackground({ active }: { active: boolean }) {
   const pointsRef = useRef<THREE.Points>(null);
-  const count = 1000;
+  const count = 600; // Reduced for performance
 
   const [positions, speeds] = useMemo(() => {
     const pos = new Float32Array(count * 3);
     const spd = new Float32Array(count);
     for (let i = 0; i < count; i++) {
-      // Create stars in a cylinder/tunnel
       const angle = Math.random() * Math.PI * 2;
-      const radius = 2 + Math.random() * 15;
+      const radius = 1.5 + Math.random() * 12;
       pos[i * 3] = Math.cos(angle) * radius;
       pos[i * 3 + 1] = Math.sin(angle) * radius;
-      pos[i * 3 + 2] = Math.random() * 100 - 50;
-      spd[i] = 0.5 + Math.random() * 2;
+      pos[i * 3 + 2] = Math.random() * 80 - 40;
+      spd[i] = 0.8 + Math.random() * 2.5;
     }
     return [pos, spd];
   }, []);
@@ -27,20 +26,14 @@ export default function WarpBackground({ active }: { active: boolean }) {
     if (!pointsRef.current) return;
     const pos = pointsRef.current.geometry.attributes.position.array as Float32Array;
 
+    const speedBase = active ? 25 : 0.8;
+    
     for (let i = 0; i < count; i++) {
-      // Speed up during transition
-      const speedMult = active ? 15 : 0.5;
-      pos[i * 3 + 2] += speeds[i] * speedMult * delta * 60;
-
-      // Recycle points
-      if (pos[i * 3 + 2] > 50) {
-        pos[i * 3 + 2] = -50;
-      }
+      pos[i * 3 + 2] += speeds[i] * speedBase * delta * 60;
+      if (pos[i * 3 + 2] > 40) pos[i * 3 + 2] = -40;
     }
     pointsRef.current.geometry.attributes.position.needsUpdate = true;
-    
-    // Slight rotation for cinematic feel
-    pointsRef.current.rotation.z += delta * 0.1;
+    pointsRef.current.rotation.z += delta * 0.2;
   });
 
   return (
@@ -54,10 +47,10 @@ export default function WarpBackground({ active }: { active: boolean }) {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.1}
+        size={0.12}
         color="#06b6d4"
         transparent
-        opacity={0.6}
+        opacity={0.8}
         sizeAttenuation
         blending={THREE.AdditiveBlending}
       />
