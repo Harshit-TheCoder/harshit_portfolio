@@ -4,28 +4,29 @@ import { motion } from "framer-motion";
 import { achievementsData } from "@/data";
 import Image from "next/image";
 import { Award, Star, ExternalLink, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { useTransition } from "@/components/transition/PageTransitionProvider";
 
 export default function Achievements() {
   const displayAchievements = achievementsData.slice(0, 3);
+  const { startTransition } = useTransition();
 
   return (
-    <section id="certifications" className="py-24 relative overflow-hidden">
+    <section id="certifications" className="py-16 md:py-24 relative overflow-hidden">
       <div className="container px-4 mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
               Achievements
             </span>{" "}
             & Recognitions
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent to-secondary mx-auto rounded-full" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-accent to-secondary mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,21 +70,21 @@ export default function Achievements() {
           ))}
         </div>
 
-        {/* See All Button */}
+        {/* See All Button with Rocket Transition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-16 flex justify-center"
+          className="mt-12 md:mt-16 flex justify-center"
         >
-          <Link 
-            href="/certifications" 
-            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-secondary/10 text-secondary border border-secondary/30 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 glass"
+          <button
+            onClick={() => startTransition("/certifications")}
+            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-secondary/10 text-secondary border border-secondary/30 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 glass cursor-pointer"
           >
             <span className="font-semibold tracking-wide">Explore All Certifications</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
         </motion.div>
       </div>
     </section>

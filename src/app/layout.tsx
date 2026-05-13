@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Background from "@/components/canvas/Background";
+import { PageTransitionProvider } from "@/components/transition/PageTransitionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,9 +30,11 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-transparent text-foreground relative min-h-screen`}
       >
         <Background />
-        <main className="relative z-10 w-full">
-          {children}
-        </main>
+        <PageTransitionProvider>
+          <main className="relative z-10 w-full">
+            {children}
+          </main>
+        </PageTransitionProvider>
       </body>
     </html>
   );
