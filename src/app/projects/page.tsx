@@ -8,12 +8,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 type ProjectType = {
-  id: number;
+  id: string | number;
   title: string;
   description: string;
   features: string[];
   tags: string[];
   links: { github?: string; demo?: string; youtube?: string; live?: string };
+  image?: string;
 };
 
 // Reusing the ProjectCard logic for the dedicated page
@@ -30,9 +31,13 @@ function ProjectCard({ project, index }: { project: ProjectType; index: number }
       
       {/* Image Placeholder */}
       <div className="relative w-full h-48 md:h-64 bg-muted/20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background to-muted/30 flex items-center justify-center">
-           <div className="text-muted-foreground/50 font-mono text-xl tracking-widest text-center px-4">{project.title.toUpperCase()}</div>
-        </div>
+        {project.image ? (
+          <Image src={project.image} alt={project.title} fill className="object-cover" />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-background to-muted/30 flex items-center justify-center">
+             <div className="text-muted-foreground/50 font-mono text-xl tracking-widest text-center px-4">{project.title.toUpperCase()}</div>
+          </div>
+        )}
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
           {project.links.github && (
             <motion.a

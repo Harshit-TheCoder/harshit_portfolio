@@ -10,12 +10,15 @@ export const personalData = {
   ],
   about: "I build scalable full-stack systems, AI-driven platforms, and futuristic engineering experiences. Passionate about problem solving, distributed architectures, machine learning, and building impactful technology products.",
   contact: {
-    email: "contact@harshitharlalka.com",
-    github: "https://github.com/", // Add real link later
-    linkedin: "https://linkedin.com/in/",
-    leetcode: "https://leetcode.com/",
-    codeforces: "https://codeforces.com/",
-    codolio: "https://codolio.com/",
-    youtube: "https://youtube.com/",
+    email: "harshitharlalka11@gmail.com",
+    email2: "hh2044@srmist.edu.in",
+    github: "https://github.com/Harshit-TheCoder",
+    linkedin: "https://www.linkedin.com/in/harshit-harlalka-26b200233/",
+    instagram: "https://www.instagram.com/harlalkaharshit/",
+    facebook: "https://www.facebook.com/harshit.harlalka.1/",
+    leetcode: "https://leetcode.com/u/harlalkaharshit/",
+    codeforces: "https://codeforces.com/profile/Harshit-TheCoder",
+    codolio: "https://codolio.com/profile/HarshitTheCoder",
+    youtube: "https://www.youtube.com/@HarshitHarlalka-xz4gu",
   },
 };

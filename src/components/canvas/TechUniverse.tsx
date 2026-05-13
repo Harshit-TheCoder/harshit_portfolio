@@ -9,7 +9,7 @@ import { skillsData } from "@/data";
 // Extract all skills into a flat array
 const allSkills = Object.values(skillsData).flat();
 
-function SkillNode({ position, skill, index }: { position: [number, number, number]; skill: string; index: number }) {
+function SkillNode({ position, skill, index }: { position: [number, number, number]; skill: { name: string; icon: string }; index: number }) {
   const meshRef = useRef<THREE.Mesh>(null);
   
   // Create a consistent random color per node (cyan or purple)
@@ -36,15 +36,15 @@ function SkillNode({ position, skill, index }: { position: [number, number, numb
           opacity={0.8}
         />
         <Text
-          position={[0, 0, 0.6]}
-          fontSize={0.25}
-          color="white"
+          position={[0, -0.4, 0]}
+          fontSize={0.2}
+          color="#a855f7"
           anchorX="center"
           anchorY="middle"
           outlineWidth={0.02}
-          outlineColor="#000000"
+          outlineColor="#000"
         >
-          {skill}
+          {skill.name}
         </Text>
       </mesh>
     </Float>
