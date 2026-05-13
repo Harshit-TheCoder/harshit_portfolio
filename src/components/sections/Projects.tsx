@@ -3,11 +3,12 @@
 import { motion } from "framer-motion";
 import { projectsData } from "@/data";
 import { ArrowRight, FlipHorizontal } from "lucide-react";
-import Link from "next/link";
 import { ProjectFlipCard } from "@/components/shared/ProjectFlipCard";
+import { useTransition } from "@/components/transition/PageTransitionProvider";
 
 export default function Projects() {
   const displayProjects = projectsData.slice(0, 4);
+  const { startTransition } = useTransition();
 
   return (
     <section id="projects" className="py-16 md:py-24 relative overflow-hidden">
@@ -52,13 +53,13 @@ export default function Projects() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-12 md:mt-16 flex justify-center"
         >
-          <Link
-            href="/projects"
-            className="group flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass text-sm md:text-base"
+          <button
+            onClick={() => startTransition("/projects")}
+            className="group flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass text-sm md:text-base cursor-pointer"
           >
             <span className="font-semibold tracking-wide">Explore All Projects</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
         </motion.div>
       </div>
     </section>

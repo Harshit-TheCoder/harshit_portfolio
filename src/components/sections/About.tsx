@@ -2,15 +2,18 @@
 
 import { motion } from "framer-motion";
 import { personalData, educationData } from "@/data";
-import { Code, Cpu, Globe, Zap, GraduationCap } from "lucide-react";
+import { Code, Cpu, Globe, Zap, GraduationCap, Award, CheckCircle2, User, ExternalLink } from "lucide-react";
+import { useTransition } from "@/components/transition/PageTransitionProvider";
 
 export default function About() {
+  const { startTransition } = useTransition();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -39,77 +42,101 @@ export default function About() {
           <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
-          {/* Text Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-start">
+          {/* Left Side: Bio & Skills Overview */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="space-y-6"
+            className="lg:col-span-7 space-y-6"
           >
-            <motion.div variants={itemVariants} className="p-5 md:p-6 rounded-2xl glass box-glow relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {personalData.headline}
-              </h3>
-              <p className="text-sm md:text-lg leading-relaxed text-muted-foreground">
-                {personalData.about}
-              </p>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="p-5 md:p-6 rounded-2xl glass relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                  <GraduationCap className="text-accent w-5 h-5" />
+            {/* Bio Card */}
+            <motion.div variants={itemVariants} className="p-6 md:p-8 rounded-3xl glass box-glow relative overflow-hidden group border border-white/10">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-secondary" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <User className="text-primary w-6 h-6" />
                 </div>
-                <h3 className="text-base md:text-lg font-bold">Education</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">Mission Briefing</h3>
               </div>
-              <h4 className="text-sm md:text-base font-semibold text-foreground mb-1">{educationData.degree}</h4>
-              <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1 text-xs md:text-sm text-muted-foreground">
-                <span>{educationData.institution}</span>
-                <span className="font-mono text-accent">CGPA: {educationData.cgpa}</span>
+              <div className="space-y-4 text-sm md:text-base leading-relaxed text-muted-foreground">
+                <p className="text-foreground font-medium text-lg italic border-l-2 border-primary/30 pl-4 mb-6">
+                  "Turning complex logic into elegant, scalable solutions since I first wrote 'Hello World' in 8th grade."
+                </p>
+                <p>
+                  I'm a Pre-Final Year CS student currently bridging the gap between Kolkata and Chennai. My journey is fueled by a lifelong obsession with puzzles and Rubik&apos;s cubes, which naturally evolved into a mastery of **Competitive Programming**.
+                </p>
+                <p>
+                  With over **1000+ problems solved**, I don&apos;t just write code—I engineer efficiency. My expertise spans from building AI-powered architectures with **TensorFlow** to deploying high-traffic web applications.
+                </p>
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3 sm:gap-4 mt-8">
-              <FeatureCard icon={<Code className="text-primary w-4 h-4 md:w-5 md:h-5" />} title="Full Stack" desc="Scalable Systems" />
-              <FeatureCard icon={<Cpu className="text-secondary w-4 h-4 md:w-5 md:h-5" />} title="AI/ML" desc="Intelligent Models" />
-              <FeatureCard icon={<Zap className="text-accent w-4 h-4 md:w-5 md:h-5" />} title="DSA" desc="Optimized Solutions" />
-              <FeatureCard icon={<Globe className="text-primary w-4 h-4 md:w-5 md:h-5" />} title="Startups" desc="Visionary Tech" />
+            {/* Feature Grid */}
+            <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <FeatureCard icon={<Code className="text-primary" />} title="1000+" desc="DSA Problems" />
+              <FeatureCard icon={<Cpu className="text-secondary" />} title="AI/ML" desc="TF & PyTorch" />
+              <FeatureCard icon={<Zap className="text-accent" />} title="Full Stack" desc="MERN Specialist" />
+              <FeatureCard icon={<Globe className="text-primary" />} title="Scalability" desc="High Performance" />
             </motion.div>
           </motion.div>
 
-          {/* Visual Elements */}
+          {/* Right Side: Education & Certs */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="relative h-full min-h-[300px] md:min-h-[400px] flex justify-center items-center"
+            className="lg:col-span-5 space-y-6"
           >
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 perspective-1000">
-              <motion.div
-                animate={{ rotateY: 360, rotateX: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="w-full h-full border-2 border-primary/30 rounded-full absolute"
-              />
-              <motion.div
-                animate={{ rotateY: -360, rotateZ: 360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="w-full h-full border-2 border-secondary/30 rounded-full absolute scale-110"
-              />
-              <motion.div
-                animate={{ rotateX: 360, rotateZ: -360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="w-full h-full border-2 border-accent/20 rounded-full absolute scale-90"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary/20 blur-xl animate-pulse" />
-                <Cpu className="absolute w-8 h-8 md:w-12 md:h-12 text-primary" />
+            {/* Education Card */}
+            <motion.div variants={itemVariants} className="p-6 md:p-8 rounded-3xl glass relative overflow-hidden border border-white/5">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Academic Status</h3>
               </div>
-            </div>
+              <div className="space-y-2">
+                <h4 className="text-base md:text-lg font-semibold text-foreground">{educationData.degree}</h4>
+                <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+                  <span className="text-primary/80">{educationData.institution}</span>
+                  <div className="flex items-center justify-between mt-2 py-2 px-4 rounded-xl bg-white/5 border border-white/5">
+                    <span className="font-mono text-xs uppercase tracking-tighter">Current Standing</span>
+                    <span className="font-mono text-accent font-bold">CGPA: {educationData.cgpa}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Certifications Card */}
+            <motion.div variants={itemVariants} className="p-6 md:p-8 rounded-3xl glass relative overflow-hidden border border-white/5 group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+                  <Award className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Endorsements</h3>
+              </div>
+              <div className="space-y-3 max-h-[250px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+                {(personalData as any).certifications.slice(0, 5).map((cert: any, i: number) => (
+                  <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all duration-300 group/cert">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0 group-hover/cert:scale-110 transition-transform" />
+                    <div>
+                      <p className="text-xs md:text-sm font-semibold text-foreground leading-tight">{cert.name}</p>
+                      <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">{cert.issuer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <button
+                onClick={() => startTransition("/certifications")}
+                className="w-full mt-6 flex items-center justify-center gap-2 py-3 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass text-xs font-bold uppercase tracking-wider"
+              >
+                View Full Dossier <ExternalLink size={14} />
+              </button>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -119,12 +146,12 @@ export default function About() {
 
 function FeatureCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
-    <div className="p-3 md:p-4 rounded-xl glass border border-white/5 hover:border-primary/30 transition-colors group">
-      <div className="mb-2 md:mb-3 p-1.5 md:p-2 rounded-lg bg-white/5 w-fit group-hover:bg-primary/10 transition-colors">
+    <div className="p-4 rounded-2xl glass border border-white/5 hover:border-primary/30 transition-all duration-300 group text-center flex flex-col items-center">
+      <div className="mb-3 p-2.5 rounded-xl bg-white/5 group-hover:bg-primary/10 transition-colors">
         {icon}
       </div>
-      <h3 className="text-sm md:text-base font-semibold text-foreground mb-1">{title}</h3>
-      <p className="text-[10px] md:text-sm text-muted-foreground">{desc}</p>
+      <h3 className="text-xs md:text-sm font-bold text-foreground mb-1">{title}</h3>
+      <p className="text-[10px] text-muted-foreground leading-tight">{desc}</p>
     </div>
   );
 }
