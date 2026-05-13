@@ -21,25 +21,25 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-16 md:py-24 relative overflow-hidden">
       <div className="container px-4 mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Initialize
             </span>{" "}
             Profile
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
           {/* Text Content */}
           <motion.div
             variants={containerVariants}
@@ -48,36 +48,36 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="space-y-6"
           >
-            <motion.div variants={itemVariants} className="p-6 rounded-2xl glass box-glow relative overflow-hidden group">
+            <motion.div variants={itemVariants} className="p-5 md:p-6 rounded-2xl glass box-glow relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {personalData.headline}
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-sm md:text-lg leading-relaxed text-muted-foreground">
                 {personalData.about}
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="p-6 rounded-2xl glass relative overflow-hidden group">
+            <motion.div variants={itemVariants} className="p-5 md:p-6 rounded-2xl glass relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
                   <GraduationCap className="text-accent w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-bold">Education</h3>
+                <h3 className="text-base md:text-lg font-bold">Education</h3>
               </div>
-              <h4 className="text-base font-semibold text-foreground mb-1">{educationData.degree}</h4>
-              <div className="flex justify-between items-center text-sm text-muted-foreground">
+              <h4 className="text-sm md:text-base font-semibold text-foreground mb-1">{educationData.degree}</h4>
+              <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1 text-xs md:text-sm text-muted-foreground">
                 <span>{educationData.institution}</span>
                 <span className="font-mono text-accent">CGPA: {educationData.cgpa}</span>
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 mt-8">
-              <FeatureCard icon={<Code className="text-primary" />} title="Full Stack" desc="Scalable Systems" />
-              <FeatureCard icon={<Cpu className="text-secondary" />} title="AI/ML" desc="Intelligent Models" />
-              <FeatureCard icon={<Zap className="text-accent" />} title="DSA" desc="Optimized Solutions" />
-              <FeatureCard icon={<Globe className="text-primary" />} title="Startups" desc="Visionary Tech" />
+            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3 sm:gap-4 mt-8">
+              <FeatureCard icon={<Code className="text-primary w-4 h-4 md:w-5 md:h-5" />} title="Full Stack" desc="Scalable Systems" />
+              <FeatureCard icon={<Cpu className="text-secondary w-4 h-4 md:w-5 md:h-5" />} title="AI/ML" desc="Intelligent Models" />
+              <FeatureCard icon={<Zap className="text-accent w-4 h-4 md:w-5 md:h-5" />} title="DSA" desc="Optimized Solutions" />
+              <FeatureCard icon={<Globe className="text-primary w-4 h-4 md:w-5 md:h-5" />} title="Startups" desc="Visionary Tech" />
             </motion.div>
           </motion.div>
 
@@ -87,9 +87,9 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative h-full min-h-[400px] flex justify-center items-center"
+            className="relative h-full min-h-[300px] md:min-h-[400px] flex justify-center items-center"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 perspective-1000">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 perspective-1000">
               <motion.div
                 animate={{ rotateY: 360, rotateX: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -106,8 +106,8 @@ export default function About() {
                 className="w-full h-full border-2 border-accent/20 rounded-full absolute scale-90"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full bg-primary/20 blur-xl animate-pulse" />
-                <Cpu className="absolute w-12 h-12 text-primary" />
+                <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary/20 blur-xl animate-pulse" />
+                <Cpu className="absolute w-8 h-8 md:w-12 md:h-12 text-primary" />
               </div>
             </div>
           </motion.div>
@@ -119,12 +119,12 @@ export default function About() {
 
 function FeatureCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
-    <div className="p-4 rounded-xl glass border border-white/5 hover:border-primary/30 transition-colors group">
-      <div className="mb-3 p-2 rounded-lg bg-white/5 w-fit group-hover:bg-primary/10 transition-colors">
+    <div className="p-3 md:p-4 rounded-xl glass border border-white/5 hover:border-primary/30 transition-colors group">
+      <div className="mb-2 md:mb-3 p-1.5 md:p-2 rounded-lg bg-white/5 w-fit group-hover:bg-primary/10 transition-colors">
         {icon}
       </div>
-      <h3 className="font-semibold text-foreground mb-1">{title}</h3>
-      <p className="text-sm text-muted-foreground">{desc}</p>
+      <h3 className="text-sm md:text-base font-semibold text-foreground mb-1">{title}</h3>
+      <p className="text-[10px] md:text-sm text-muted-foreground">{desc}</p>
     </div>
   );
 }

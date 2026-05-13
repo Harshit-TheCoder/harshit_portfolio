@@ -37,7 +37,7 @@ export default function Hero() {
           <div className="absolute inset-[-4px] rounded-full border border-primary/30 animate-[spin_4s_linear_infinite]"></div>
           <div className="absolute inset-[-8px] rounded-full border border-secondary/20 animate-[spin_6s_linear_infinite_reverse]"></div>
           
-          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/50 bg-background/50 backdrop-blur-md">
+          <div className="relative w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/50 bg-background/50 backdrop-blur-md">
             <Image
               src="/ProfileImage/image.png"
               alt={personalData.name}
@@ -55,7 +55,7 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="mb-4"
         >
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight px-2">
             Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{personalData.name}</span>
           </h1>
         </motion.div>
@@ -74,7 +74,7 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-xl md:text-3xl font-mono font-bold flex items-center justify-center gap-2"
+              className="text-lg sm:text-xl md:text-3xl font-mono font-bold flex items-center justify-center gap-2"
             >
               <span className="text-muted-foreground font-normal">&gt;</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]">
@@ -83,7 +83,7 @@ export default function Hero() {
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ repeat: Infinity, duration: 0.8 }}
-                className="inline-block w-3 h-6 bg-cyan-400 ml-1 align-middle"
+                className="inline-block w-2 h-5 sm:w-3 sm:h-6 bg-cyan-400 ml-1 align-middle"
               />
             </motion.p>
           </AnimatePresence>
@@ -94,21 +94,21 @@ export default function Hero() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="flex flex-wrap items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
         >
           <MagneticButton>
-            <a href="#projects" className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
+            <a href="#projects" className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors w-full sm:w-auto justify-center">
               View Projects <ChevronRight size={18} />
             </a>
           </MagneticButton>
           
           <MagneticButton>
-            <a href="#contact" className="flex items-center gap-2 px-6 py-3 rounded-full bg-secondary/10 text-secondary border border-secondary/30 hover:bg-secondary/20 transition-colors glass">
+            <a href="#contact" className="flex items-center gap-2 px-6 py-3 rounded-full bg-secondary/10 text-secondary border border-secondary/30 hover:bg-secondary/20 transition-colors glass w-full sm:w-auto justify-center">
               Contact Me <Mail size={18} />
             </a>
           </MagneticButton>
           
-          <div className="flex gap-4 ml-0 md:ml-4">
+          <div className="flex gap-4 mt-2 sm:mt-0">
             <MagneticButton>
               <a href={personalData.contact.github} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 border border-muted hover:border-primary/50 hover:text-primary transition-colors glass">
                 <FaGithub size={20} />
@@ -136,12 +136,9 @@ function MagneticButton({ children }: { children: React.ReactNode }) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      className="w-full sm:w-auto"
     >
       {children}
     </motion.div>
   );
 }
-
-
-
-
