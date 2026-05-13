@@ -2,9 +2,12 @@
 
 import { motion } from "framer-motion";
 import { achievementsData } from "@/data";
-import { Award, ExternalLink } from "lucide-react";
+import { Award, Star, ExternalLink, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Achievements() {
+  const displayAchievements = achievementsData.slice(0, 3);
+
   return (
     <section id="certifications" className="py-24 relative overflow-hidden">
       <div className="container px-4 mx-auto relative z-10">
@@ -25,7 +28,7 @@ export default function Achievements() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {achievementsData.map((achievement, index) => (
+          {displayAchievements.map((achievement, index) => (
             <motion.a
               href={achievement.link}
               target="_blank"
@@ -53,6 +56,23 @@ export default function Achievements() {
             </motion.a>
           ))}
         </div>
+
+        {/* See All Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-16 flex justify-center"
+        >
+          <Link 
+            href="/certifications" 
+            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-secondary/10 text-secondary border border-secondary/30 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 glass"
+          >
+            <span className="font-semibold tracking-wide">Explore All Certifications</span>
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
