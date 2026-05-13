@@ -21,6 +21,7 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
 @utility glass {
@@ -35,4 +36,18 @@ body {
 
 @utility box-glow {
   box-shadow: 0 0 30px rgba(6, 182, 212, 0.2);
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  .scrollbar-track-transparent::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thumb-primary {
+    background: rgba(6, 182, 212, 0.2);
+    border-radius: 10px;
+  }
 }

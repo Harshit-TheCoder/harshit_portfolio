@@ -32,7 +32,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* Cinematic Skill Artillery Section */}
+        {/* Cinematic Skill Artillery Section with Horizontal Scroll for Mobile */}
         <AnimatePresence mode="wait">
           {!showGrid && (
             <motion.div 
@@ -41,9 +41,13 @@ export default function Skills() {
               animate={isInView ? { opacity: 1 } : {}}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8 }}
-              className="w-full mb-8 md:mb-12"
+              className="w-full mb-8 md:mb-12 overflow-x-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent pb-4"
             >
-              <SkillArtilleryScene start={isInView} onComplete={() => setShowGrid(true)} />
+              <div className="min-w-[500px] md:min-w-full flex justify-center">
+                <div className="w-full max-w-[1200px]">
+                  <SkillArtilleryScene start={isInView} onComplete={() => setShowGrid(true)} />
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
