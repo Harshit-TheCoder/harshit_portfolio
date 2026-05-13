@@ -12,6 +12,7 @@ export const personalData = {
   contact: {
     email: "harshitharlalka11@gmail.com",
     email2: "hh2044@srmist.edu.in",
+    // phone removed for privacy
     github: "https://github.com/Harshit-TheCoder",
     linkedin: "https://www.linkedin.com/in/harshit-harlalka-26b200233/",
     instagram: "https://www.instagram.com/harlalkaharshit/",
