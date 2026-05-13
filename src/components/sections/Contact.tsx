@@ -44,22 +44,22 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 relative overflow-hidden">
       <div className="container px-4 mx-auto relative z-10 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
               Establish
             </span>{" "}
             Connection
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full" />
         </motion.div>
 
         <motion.div
@@ -67,108 +67,92 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12 rounded-3xl glass border border-white/10 relative overflow-hidden"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 p-5 sm:p-8 md:p-12 rounded-3xl glass border border-white/10 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
           {/* Left Column: Contact Info */}
-          <div className="relative z-10 flex flex-col justify-center space-y-8 border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-12">
+          <div className="relative z-10 flex flex-col justify-center space-y-6 md:space-y-8 border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-12">
             <div>
-              <h3 className="text-2xl font-bold mb-2 text-white">Reach Out</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">Reach Out</h3>
+              <p className="text-sm md:text-base text-muted-foreground">
                 Feel free to connect with me for collaborations, research opportunities, or just to say hi!
               </p>
             </div>
             
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(6,182,212,0.1)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
-                  <Mail className="w-5 h-5" />
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex items-center gap-3 md:gap-4 group">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(6,182,212,0.1)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                  <Mail className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
-                <div>
-                  <p className="font-medium text-white">{personalData.contact.email}</p>
-                  <p className="text-sm text-muted-foreground">{personalData.contact.email2}</p>
+                <div className="overflow-hidden">
+                  <p className="text-sm md:font-medium text-white truncate">{personalData.contact.email}</p>
+                  <p className="text-xs text-muted-foreground truncate">{personalData.contact.email2}</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(168,85,247,0.1)] group-hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]">
-                  <Mail className="w-5 h-5" />
+              <div className="flex items-center gap-3 md:gap-4 group">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(168,85,247,0.1)] group-hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]">
+                  <Mail className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
-                <div>
-                  <p className="font-medium text-white">{personalData.contact.email2}</p>
-                  <p className="text-sm text-muted-foreground">Academic Email</p>
+                <div className="overflow-hidden">
+                  <p className="text-sm md:font-medium text-white truncate">{personalData.contact.email2}</p>
+                  <p className="text-xs text-muted-foreground">Academic Email</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4">Social & Coding Profiles</h4>
-              <div className="flex flex-wrap gap-4">
-                <a href={personalData.contact.linkedin} target="_blank" rel="noreferrer" title="LinkedIn" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-colors">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-                <a href={personalData.contact.github} target="_blank" rel="noreferrer" title="GitHub" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#333] hover:text-white transition-colors">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-                <a href={personalData.contact.leetcode} target="_blank" rel="noreferrer" title="LeetCode" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FFA116] hover:text-white transition-colors">
-                  <Code className="w-5 h-5" />
-                </a>
-                <a href={personalData.contact.codeforces} target="_blank" rel="noreferrer" title="Codeforces" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1f8ACB] hover:text-white transition-colors">
-                  <Trophy className="w-5 h-5" />
-                </a>
-                <a href={personalData.contact.codolio} target="_blank" rel="noreferrer" title="Codolio" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
-                  <ChartBar className="w-5 h-5" />
-                </a>
-                <a href={personalData.contact.youtube} target="_blank" rel="noreferrer" title="YouTube" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors">
-                  <FaYoutube className="w-5 h-5" />
-                </a>
-                <a href={personalData.contact.instagram} target="_blank" rel="noreferrer" title="Instagram" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors">
-                  <FaInstagram className="w-5 h-5" />
-                </a>
-                <a href={personalData.contact.facebook} target="_blank" rel="noreferrer" title="Facebook" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-colors">
-                  <FaFacebook className="w-5 h-5" />
-                </a>
+              <h4 className="text-sm md:font-semibold text-white mb-4">Social & Coding Profiles</h4>
+              <div className="flex flex-wrap gap-2 md:gap-4">
+                <ProfileLink href={personalData.contact.linkedin} icon={<FaLinkedin className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="#0077b5" />
+                <ProfileLink href={personalData.contact.github} icon={<FaGithub className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="#333" />
+                <ProfileLink href={personalData.contact.leetcode} icon={<Code className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="#FFA116" />
+                <ProfileLink href={personalData.contact.codeforces} icon={<Trophy className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="#1f8ACB" />
+                <ProfileLink href={personalData.contact.codolio} icon={<ChartBar className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="var(--secondary)" />
+                <ProfileLink href={personalData.contact.youtube} icon={<FaYoutube className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="#FF0000" />
+                <ProfileLink href={personalData.contact.instagram} icon={<FaInstagram className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="#E1306C" />
+                <ProfileLink href={personalData.contact.facebook} icon={<FaFacebook className="w-4 h-4 md:w-5 md:h-5" />} hoverColor="#1877F2" />
               </div>
             </div>
           </div>
 
           {/* Right Column: Form */}
-          <div className="relative z-10 flex flex-col justify-center">
+          <div className="relative z-10 flex flex-col justify-center mt-8 lg:mt-0">
           {isSubmitted ? (
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="flex flex-col items-center justify-center text-center py-12"
+              className="flex flex-col items-center justify-center text-center py-10"
             >
-              <CheckCircle2 className="w-20 h-20 text-emerald-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-2">Message Transmitted</h3>
-              <p className="text-muted-foreground">
+              <CheckCircle2 className="w-16 h-16 md:w-20 md:h-20 text-emerald-500 mb-6" />
+              <h3 className="text-xl md:text-2xl font-bold mb-2">Message Transmitted</h3>
+              <p className="text-sm text-muted-foreground">
                 Your connection request has been securely logged. I will respond shortly.
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="mt-8 px-6 py-2 rounded-full border border-white/20 hover:bg-white/5 transition-colors"
+                className="mt-8 px-6 py-2 rounded-full border border-white/20 hover:bg-white/5 transition-colors text-sm"
               >
                 Send Another
               </button>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="relative z-10 space-y-4 md:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 <div className="space-y-2 relative group">
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-primary/50 focus:bg-black/40 transition-all peer"
+                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-primary/50 focus:bg-black/40 transition-all peer text-sm"
                     placeholder=" "
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-4 top-3 text-muted-foreground transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-primary peer-valid:-top-6 peer-valid:text-xs peer-valid:text-primary"
+                    className="absolute left-4 top-3 text-xs md:text-sm text-muted-foreground transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-primary peer-valid:-top-6 peer-valid:text-xs peer-valid:text-primary"
                   >
                     Identifier (Name)
                   </label>
@@ -179,12 +163,12 @@ export default function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-secondary/50 focus:bg-black/40 transition-all peer"
+                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-secondary/50 focus:bg-black/40 transition-all peer text-sm"
                     placeholder=" "
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-4 top-3 text-muted-foreground transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-secondary peer-valid:-top-6 peer-valid:text-xs peer-valid:text-secondary"
+                    className="absolute left-4 top-3 text-xs md:text-sm text-muted-foreground transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-secondary peer-valid:-top-6 peer-valid:text-xs peer-valid:text-secondary"
                   >
                     Communication Link (Email)
                   </label>
@@ -196,20 +180,20 @@ export default function Contact() {
                   id="message"
                   name="message"
                   required
-                  rows={5}
-                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent/50 focus:bg-black/40 transition-all peer resize-none"
+                  rows={4}
+                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent/50 focus:bg-black/40 transition-all peer resize-none text-sm"
                   placeholder=" "
                 />
                 <label
                   htmlFor="message"
-                  className="absolute left-4 top-5 text-muted-foreground transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-accent peer-valid:-top-4 peer-valid:text-xs peer-valid:text-accent"
+                  className="absolute left-4 top-5 text-xs md:text-sm text-muted-foreground transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-accent peer-valid:-top-4 peer-valid:text-xs peer-valid:text-accent"
                 >
                   Payload (Message)
                 </label>
               </div>
 
               {error && (
-                <p className="text-red-400 text-sm text-center">{error}</p>
+                <p className="text-red-400 text-xs text-center">{error}</p>
               )}
 
               <motion.button
@@ -217,9 +201,9 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity box-glow disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full py-3 md:py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity box-glow disabled:opacity-60 disabled:cursor-not-allowed text-sm md:text-base"
               >
-                {isLoading ? "Transmitting..." : <><span>Transmit</span> <Send className="w-5 h-5" /></>}
+                {isLoading ? "Transmitting..." : <><span>Transmit</span> <Send className="w-4 h-4 md:w-5 md:h-5" /></>}
               </motion.button>
             </form>
           )}
@@ -227,5 +211,21 @@ export default function Contact() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function ProfileLink({ href, icon, hoverColor }: { href: string; icon: React.ReactNode; hoverColor: string }) {
+  return (
+    <a 
+      href={href} 
+      target="_blank" 
+      rel="noreferrer" 
+      className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/5 flex items-center justify-center transition-colors hover:text-white"
+      style={{ '--hover-bg': hoverColor } as React.CSSProperties}
+      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = hoverColor}
+      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'}
+    >
+      {icon}
+    </a>
   );
 }
