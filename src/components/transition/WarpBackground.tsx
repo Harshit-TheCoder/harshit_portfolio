@@ -6,7 +6,7 @@ import * as THREE from "three";
 
 export default function WarpBackground({ active }: { active: boolean }) {
   const pointsRef = useRef<THREE.Points>(null);
-  const count = 600; // Reduced for performance
+  const count = 600;
 
   const [positions, speeds] = useMemo(() => {
     const pos = new Float32Array(count * 3);
@@ -41,9 +41,7 @@ export default function WarpBackground({ active }: { active: boolean }) {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={count}
-          array={positions}
-          itemSize={3}
+          args={[positions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
