@@ -5,7 +5,6 @@ import { projectsData } from "@/data";
 import { ExternalLink, Play, ArrowRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Projects() {
   // Only show top 4 projects on home page
@@ -57,7 +56,16 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ project, index }: { project: any; index: number }) {
+type ProjectType = {
+  id: number;
+  title: string;
+  description: string;
+  features: string[];
+  tags: string[];
+  links: { github?: string; demo?: string; youtube?: string; live?: string };
+};
+
+function ProjectCard({ project, index }: { project: ProjectType; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

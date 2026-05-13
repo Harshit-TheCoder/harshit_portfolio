@@ -1,17 +1,17 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { PointMaterial, Points } from "@react-three/drei";
 
 export default function Starfield() {
   const ref = useRef<THREE.Points>(null);
-
-  // Generate 5000 random points in a sphere
+  
   const positions = useMemo(() => {
+    /* eslint-disable react-hooks/purity */
     const count = 5000;
-    const positions = new Float32Array(count * 3);
+    const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const r = 2 * Math.cbrt(Math.random());
       const theta = Math.random() * 2 * Math.PI;
@@ -21,11 +21,12 @@ export default function Starfield() {
       const y = r * Math.sin(phi) * Math.sin(theta);
       const z = r * Math.cos(phi);
 
-      positions[i * 3] = x;
-      positions[i * 3 + 1] = y;
-      positions[i * 3 + 2] = z;
+      pos[i * 3] = x * 20;
+      pos[i * 3 + 1] = y * 20;
+      pos[i * 3 + 2] = z * 20;
     }
-    return positions;
+    /* eslint-enable react-hooks/purity */
+    return pos;
   }, []);
 
   useFrame((state, delta) => {

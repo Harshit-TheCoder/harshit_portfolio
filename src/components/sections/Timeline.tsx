@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import { experienceTimeline } from "@/data";
 import { Briefcase, Award, Trophy } from "lucide-react";
 
+type TimelineData = {
+  title: string;
+  company: string;
+  date: string;
+  description: string;
+};
+
 export default function Timeline() {
   return (
     <section id="experience" className="py-24 relative overflow-hidden">
@@ -29,7 +36,7 @@ export default function Timeline() {
           <div className="absolute left-[28px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-secondary to-transparent" />
 
           <div className="space-y-12">
-            {experienceTimeline.map((item, index) => (
+            {experienceTimeline.map((item: TimelineData, index) => (
               <TimelineItem key={index} item={item} index={index} />
             ))}
           </div>
@@ -39,7 +46,7 @@ export default function Timeline() {
   );
 }
 
-function TimelineItem({ item, index }: { item: any; index: number }) {
+function TimelineItem({ item, index }: { item: TimelineData; index: number }) {
   const isEven = index % 2 === 0;
 
   const getIcon = () => {
