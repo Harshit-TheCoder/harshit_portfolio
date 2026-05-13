@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skillsData } from "@/data";
+import Image from "next/image";
 
 export default function Skills() {
   return (
@@ -43,10 +44,15 @@ export default function Skills() {
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
                   <span
-                    key={skill}
-                    className="px-4 py-2 text-sm font-medium rounded-full bg-white/5 border border-white/10 text-muted-foreground group-hover:border-primary/30 group-hover:text-foreground transition-colors"
+                    key={skill.name}
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-white/5 border border-white/10 text-muted-foreground group-hover:border-primary/30 group-hover:text-foreground transition-colors"
                   >
-                    {skill}
+                    {skill.icon && (
+                      <div className="relative w-5 h-5 flex-shrink-0">
+                        <Image src={skill.icon} alt={skill.name} fill className="object-contain" />
+                      </div>
+                    )}
+                    {skill.name}
                   </span>
                 ))}
               </div>

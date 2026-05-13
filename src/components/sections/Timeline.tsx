@@ -6,9 +6,10 @@ import { Briefcase, Award, Trophy } from "lucide-react";
 
 type TimelineData = {
   title: string;
-  company: string;
+  organization: string;
   date: string;
   description: string;
+  type?: string;
 };
 
 export default function Timeline() {
@@ -89,7 +90,7 @@ function TimelineItem({ item, index }: { item: TimelineData; index: number }) {
             {item.date}
           </span>
           <h3 className="text-xl font-bold text-foreground mb-1">{item.title}</h3>
-          <h4 className="text-sm font-medium text-secondary mb-3">{item.organization}</h4>
+          <h4 className="text-lg font-medium text-muted-foreground">{item.organization}</h4>
           <p className="text-muted-foreground text-sm leading-relaxed">
             {item.description}
           </p>

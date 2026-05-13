@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2, Mail, Phone, Code, Trophy, ChartBar } from "lucide-react";
+import { FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { personalData } from "@/data";
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -37,11 +39,75 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="p-8 md:p-12 rounded-3xl glass border border-white/10 relative overflow-hidden"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12 rounded-3xl glass border border-white/10 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
+          {/* Left Column: Contact Info */}
+          <div className="relative z-10 flex flex-col justify-center space-y-8 border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-12">
+            <div>
+              <h3 className="text-2xl font-bold mb-2 text-white">Reach Out</h3>
+              <p className="text-muted-foreground">
+                Feel free to connect with me for collaborations, research opportunities, or just to say hi!
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(6,182,212,0.1)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-medium text-white">{personalData.contact.email}</p>
+                  <p className="text-sm text-muted-foreground">{personalData.contact.email2}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(168,85,247,0.1)] group-hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-medium text-white">{personalData.contact.phone}</p>
+                  <p className="text-sm text-muted-foreground">Direct Line</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-white mb-4">Social & Coding Profiles</h4>
+              <div className="flex flex-wrap gap-4">
+                <a href={personalData.contact.linkedin} target="_blank" rel="noreferrer" title="LinkedIn" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-colors">
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+                <a href={personalData.contact.github} target="_blank" rel="noreferrer" title="GitHub" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#333] hover:text-white transition-colors">
+                  <FaGithub className="w-5 h-5" />
+                </a>
+                <a href={personalData.contact.leetcode} target="_blank" rel="noreferrer" title="LeetCode" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FFA116] hover:text-white transition-colors">
+                  <Code className="w-5 h-5" />
+                </a>
+                <a href={personalData.contact.codeforces} target="_blank" rel="noreferrer" title="Codeforces" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1f8ACB] hover:text-white transition-colors">
+                  <Trophy className="w-5 h-5" />
+                </a>
+                <a href={personalData.contact.codolio} target="_blank" rel="noreferrer" title="Codolio" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors">
+                  <ChartBar className="w-5 h-5" />
+                </a>
+                <a href={personalData.contact.youtube} target="_blank" rel="noreferrer" title="YouTube" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-colors">
+                  <FaYoutube className="w-5 h-5" />
+                </a>
+                <a href={personalData.contact.instagram} target="_blank" rel="noreferrer" title="Instagram" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors">
+                  <FaInstagram className="w-5 h-5" />
+                </a>
+                <a href={personalData.contact.facebook} target="_blank" rel="noreferrer" title="Facebook" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-colors">
+                  <FaFacebook className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="relative z-10 flex flex-col justify-center">
           {isSubmitted ? (
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -121,6 +187,7 @@ export default function Contact() {
               </motion.button>
             </form>
           )}
+          </div>
         </motion.div>
       </div>
     </section>

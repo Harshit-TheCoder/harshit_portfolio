@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Trail, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
@@ -13,7 +13,7 @@ type ProjectileData = {
   id: number;
   startPos: THREE.Vector3;
   direction: THREE.Vector3;
-  skill: string;
+  skill: { name: string; icon: string };
 };
 
 function Cannon({ onFire }: { onFire: (pos: THREE.Vector3, dir: THREE.Vector3) => void }) {
@@ -97,7 +97,7 @@ function SkillProjectile({
   id: number; 
   startPos: THREE.Vector3; 
   direction: THREE.Vector3; 
-  skill: string; 
+  skill: { name: string; icon: string }; 
   onComplete: (id: number) => void;
 }) {
   const ref = useRef<THREE.Group>(null);
@@ -111,6 +111,7 @@ function SkillProjectile({
 
   const orbitAngle = useRef(initialOrbit);
   const targetDist = useRef(initialTargetDist);
+  const travelDist = useRef(0);
   const isCyan = initialIsCyan;
 
   const color = isCyan ? "#06b6d4" : "#a855f7";
@@ -125,7 +126,7 @@ function SkillProjectile({
       ref.current.position.add(step);
       travelDist.current += speed * delta;
 
-      if (travelDist.current > targetDist) {
+      if (travelDist.current > targetDist.current) {
         setPhase("burst");
         setTimeout(() => setPhase("orbit"), 500); // 0.5s burst phase
       }

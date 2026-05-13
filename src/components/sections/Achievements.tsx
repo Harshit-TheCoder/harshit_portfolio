@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { achievementsData } from "@/data";
+import Image from "next/image";
 import { Award, Star, ExternalLink, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -46,9 +47,20 @@ export default function Achievements() {
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                 <Award className="text-accent w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">
                 {achievement.title}
               </h3>
+
+              {(achievement as any).image && (
+                <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden border border-white/10">
+                  <Image 
+                    src={(achievement as any).image} 
+                    alt={achievement.title} 
+                    fill 
+                    className="object-cover" 
+                  />
+                </div>
+              )}
               <div className="flex justify-between items-center text-sm text-muted-foreground">
                 <span>{achievement.issuer}</span>
                 <span className="text-xs bg-white/5 px-2 py-1 rounded-md">{achievement.date}</span>

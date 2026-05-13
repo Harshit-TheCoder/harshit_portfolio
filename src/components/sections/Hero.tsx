@@ -39,7 +39,7 @@ export default function Hero() {
           
           <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/50 bg-background/50 backdrop-blur-md">
             <Image
-              src="/avatar.svg"
+              src="/ProfileImage/image.png"
               alt={personalData.name}
               fill
               className="object-cover"
