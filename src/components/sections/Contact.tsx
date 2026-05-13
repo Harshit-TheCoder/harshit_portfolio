@@ -2,17 +2,45 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Mail, Phone, Code, Trophy, ChartBar } from "lucide-react";
+import { Send, CheckCircle2, Mail, Code, Trophy, ChartBar } from "lucide-react";
 import { FaLinkedin, FaGithub, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { personalData } from "@/data";
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulate sending
-    setTimeout(() => setIsSubmitted(true), 1000);
+    setIsLoading(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const json = await res.json();
+        throw new Error(json.error || "Failed to send message");
+      }
+
+      setIsSubmitted(true);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -66,11 +94,11 @@ export default function Contact() {
               
               <div className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-primary-foreground transition-colors shadow-[0_0_15px_rgba(168,85,247,0.1)] group-hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]">
-                  <Phone className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">{personalData.contact.phone}</p>
-                  <p className="text-sm text-muted-foreground">Direct Line</p>
+                  <p className="font-medium text-white">{personalData.contact.email2}</p>
+                  <p className="text-sm text-muted-foreground">Academic Email</p>
                 </div>
               </div>
             </div>
@@ -133,6 +161,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     required
                     className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-primary/50 focus:bg-black/40 transition-all peer"
                     placeholder=" "
@@ -148,6 +177,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     required
                     className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-secondary/50 focus:bg-black/40 transition-all peer"
                     placeholder=" "
@@ -164,6 +194,7 @@ export default function Contact() {
               <div className="space-y-2 relative group pt-2">
                 <textarea
                   id="message"
+                  name="message"
                   required
                   rows={5}
                   className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-accent/50 focus:bg-black/40 transition-all peer resize-none"
@@ -177,13 +208,18 @@ export default function Contact() {
                 </label>
               </div>
 
+              {error && (
+                <p className="text-red-400 text-sm text-center">{error}</p>
+              )}
+
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity box-glow"
+                disabled={isLoading}
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity box-glow disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Transmit <Send className="w-5 h-5" />
+                {isLoading ? "Transmitting..." : <><span>Transmit</span> <Send className="w-5 h-5" /></>}
               </motion.button>
             </form>
           )}
