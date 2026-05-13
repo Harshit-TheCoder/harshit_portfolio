@@ -2,61 +2,12 @@
 
 import { motion } from "framer-motion";
 import { projectsData } from "@/data";
-import { ExternalLink, Play, ArrowRight } from "lucide-react";
+import { ExternalLink, Play, ArrowLeft } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Projects() {
-  // Only show top 4 projects on home page
-  const displayProjects = projectsData.slice(0, 4);
-
-  return (
-    <section id="projects" className="py-24 relative overflow-hidden">
-      <div className="container px-4 mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Project
-            </span>{" "}
-            Showcase
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-          {displayProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
-
-        {/* See All Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-16 flex justify-center"
-        >
-          <Link 
-            href="/projects" 
-            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass"
-          >
-            <span className="font-semibold tracking-wide">Explore All Projects</span>
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
+// Reusing the ProjectCard logic for the dedicated page
 function ProjectCard({ project, index }: { project: any; index: number }) {
   return (
     <motion.div
@@ -70,9 +21,8 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
       
       {/* Image Placeholder */}
       <div className="relative w-full h-48 md:h-64 bg-muted/20 overflow-hidden">
-        {/* We would use next/image here, but since we don't have actual images yet, we'll use a stylized div */}
         <div className="absolute inset-0 bg-gradient-to-br from-background to-muted/30 flex items-center justify-center">
-           <div className="text-muted-foreground/50 font-mono text-xl tracking-widest">{project.title.toUpperCase()}</div>
+           <div className="text-muted-foreground/50 font-mono text-xl tracking-widest text-center px-4">{project.title.toUpperCase()}</div>
         </div>
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
           {project.links.github && (
@@ -144,5 +94,54 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
         </div>
       </div>
     </motion.div>
+  );
+}
+
+export default function ProjectsPage() {
+  return (
+    <main className="min-h-screen pt-32 pb-24 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+
+      <div className="container px-4 mx-auto relative z-10">
+        {/* Navigation */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-12"
+        >
+          <Link 
+            href="/#projects" 
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+          >
+            <ArrowLeft size={20} />
+            <span>Back to Portfolio</span>
+          </Link>
+        </motion.div>
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            All <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Projects</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl">
+            A complete archive of my engineering work, from scalable AI systems and competitive programming tools to futuristic web experiences.
+          </p>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectsData.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </div>
+    </main>
   );
 }
