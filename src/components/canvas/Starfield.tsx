@@ -10,7 +10,7 @@ export default function Starfield() {
   
   const positions = useMemo(() => {
     /* eslint-disable react-hooks/purity */
-    const count = 5000;
+    const count = 3000;
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const r = 2 * Math.cbrt(Math.random());
@@ -31,8 +31,15 @@ export default function Starfield() {
 
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+      // Drift upward and slowly rotate to simulate floating embers/magic dust
+      ref.current.rotation.x -= delta / 20;
+      ref.current.rotation.y += delta / 30;
+      ref.current.position.y += delta / 5;
+      
+      // Reset position to loop
+      if (ref.current.position.y > 10) {
+        ref.current.position.y = -10;
+      }
     }
   });
 
@@ -41,10 +48,11 @@ export default function Starfield() {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#8b5cf6" // Purple tone
-          size={0.002}
+          color="#D4AF37" // Gold/Parchment magic
+          size={0.003}
           sizeAttenuation={true}
           depthWrite={false}
+          blending={THREE.AdditiveBlending}
         />
       </Points>
     </group>

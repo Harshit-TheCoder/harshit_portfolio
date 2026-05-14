@@ -21,12 +21,12 @@ export default function Achievements() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
-              Achievements
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+              Legendary
             </span>{" "}
-            & Recognitions
+            Achievements
           </h2>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-accent to-secondary mx-auto rounded-full" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -40,15 +40,15 @@ export default function Achievements() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="p-6 rounded-xl glass border border-white/5 hover:border-accent/40 group relative overflow-hidden block"
+              className="relative p-6 rounded-xl glass border border-primary/20 hover:border-primary/50 group overflow-hidden block magical-border"
             >
               <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <ExternalLink className="text-accent w-5 h-5" />
+                <ExternalLink className="text-primary w-5 h-5" />
               </div>
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                <Award className="text-accent w-6 h-6" />
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors border border-primary/30 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                <Award className="text-primary w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">
+              <h3 className="text-xl font-bold mb-2 group-hover:text-secondary transition-colors drop-shadow-[0_0_5px_rgba(6,182,212,0.3)]">
                 {achievement.title}
               </h3>
 
@@ -80,7 +80,7 @@ export default function Achievements() {
         >
           <button
             onClick={() => startTransition("/certifications")}
-            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-secondary/10 text-secondary border border-secondary/30 hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 glass cursor-pointer"
+            className="relative group flex items-center gap-2 px-8 py-4 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-black transition-all duration-300 glass cursor-pointer magical-border shadow-[0_0_15px_rgba(212,175,55,0.2)]"
           >
             <span className="font-semibold tracking-wide">Explore All Certifications</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

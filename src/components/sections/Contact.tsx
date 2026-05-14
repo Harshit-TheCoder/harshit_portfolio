@@ -54,12 +54,12 @@ export default function Contact() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
-              Establish
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+              Send
             </span>{" "}
-            Connection
+            Owl Post
           </h2>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]" />
         </motion.div>
 
         <motion.div
@@ -67,7 +67,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 p-5 sm:p-8 md:p-12 rounded-3xl glass border border-white/10 relative overflow-hidden"
+          className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 p-5 sm:p-8 md:p-12 rounded-3xl glass border border-primary/20 overflow-hidden magical-border"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
@@ -201,9 +201,9 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3 md:py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity box-glow disabled:opacity-60 disabled:cursor-not-allowed text-sm md:text-base"
+                className="w-full py-3 md:py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-black font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity box-glow disabled:opacity-60 disabled:cursor-not-allowed text-sm md:text-base magical-border relative"
               >
-                {isLoading ? "Transmitting..." : <><span>Transmit</span> <Send className="w-4 h-4 md:w-5 md:h-5" /></>}
+                {isLoading ? "Casting..." : <><span>Cast Spell</span> <Send className="w-4 h-4 md:w-5 md:h-5" /></>}
               </motion.button>
             </form>
           )}

@@ -87,8 +87,8 @@ function SceneContent({
   return (
     <>
       <ambientLight intensity={0.2} />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#06b6d4" />
-      <Stars radius={100} depth={50} count={1500} factor={4} saturation={0} fade speed={1} />
+      <pointLight position={[10, 10, 10]} intensity={1} color="#D4AF37" />
+      <Stars radius={100} depth={50} count={1500} factor={4} saturation={1} fade speed={2} />
       
       <group position={[0, 0, 0]} scale={isMobile ? 0.8 : 1}>
         {phase >= 2 && <TechSphere />}

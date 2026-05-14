@@ -24,12 +24,12 @@ export default function Timeline() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">
-              Experience
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+              Magical
             </span>{" "}
-            Timeline
+            Journey
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]" />
         </motion.div>
 
         <div className="max-w-4xl mx-auto relative">
@@ -82,7 +82,7 @@ function TimelineItem({ item, index }: { item: TimelineData; index: number }) {
       <div className={`ml-16 md:ml-0 w-full md:w-[45%] ${isEven ? "md:pl-8 text-left" : "md:pr-8 md:text-right"}`}>
         <motion.div
           whileHover={{ scale: 1.02 }}
-          className="p-6 rounded-2xl glass border border-white/10 hover:border-primary/50 transition-colors relative overflow-hidden group"
+          className="p-6 rounded-2xl glass border border-primary/20 hover:border-primary/50 transition-colors relative overflow-hidden group magical-border"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
