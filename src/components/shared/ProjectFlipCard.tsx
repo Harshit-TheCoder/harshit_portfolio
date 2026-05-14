@@ -46,10 +46,10 @@ export function ProjectFlipCard({
 
         {/* ── FRONT ── */}
         <div
-          className="absolute inset-0 rounded-2xl glass border border-white/10 hover:border-primary/40 transition-colors duration-300 overflow-hidden group flex flex-col"
+          className="absolute inset-0 rounded-2xl glass border border-primary/20 hover:border-primary/50 transition-colors duration-300 overflow-hidden group flex flex-col magical-border"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
           {/* Thumbnail */}
           <div className="relative w-full h-48 bg-muted/20 overflow-hidden flex-shrink-0">
@@ -104,16 +104,16 @@ export function ProjectFlipCard({
 
         {/* ── BACK ── */}
         <div
-          className="absolute inset-0 rounded-2xl border border-primary/25 overflow-hidden flex flex-col"
+          className="absolute inset-0 rounded-2xl border border-primary/40 overflow-hidden flex flex-col magical-border"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
             background:
-              "linear-gradient(135deg, rgba(6,182,212,0.07) 0%, rgba(168,85,247,0.04) 100%)",
+              "linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(6,182,212,0.06) 100%)",
             backdropFilter: "blur(14px)",
           }}
         >
-          <div className="absolute inset-0 bg-[#080810]/88" />
+          <div className="absolute inset-0 bg-[#050A15]/90" />
 
           <div className="relative z-10 h-full flex flex-col p-6">
             {/* Back header */}

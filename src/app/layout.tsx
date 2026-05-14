@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Cinzel } from "next/font/google";
 import Background from "@/components/canvas/Background";
 import { PageTransitionProvider } from "@/components/transition/PageTransitionProvider";
 import "./globals.css";
@@ -9,9 +9,9 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-cinzel",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }}>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-transparent text-foreground relative min-h-screen`}
+        className={`${inter.variable} ${cinzel.variable} antialiased bg-transparent text-foreground relative min-h-screen font-sans`}
       >
         <Background />
         <PageTransitionProvider>

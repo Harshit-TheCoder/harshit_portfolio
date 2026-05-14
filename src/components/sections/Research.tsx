@@ -66,12 +66,12 @@ export default function Research() {
           className="text-center mb-4"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
-              Publications
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+              Magical
             </span>{" "}
-            & Research
+            Manuscripts
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]" />
         </motion.div>
 
         <motion.p
@@ -81,8 +81,8 @@ export default function Research() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center text-muted-foreground text-sm mb-12 flex items-center justify-center gap-2"
         >
-          <FlipHorizontal className="w-4 h-4 text-secondary/60" />
-          Click any card to read key findings
+          <FlipHorizontal className="w-4 h-4 text-primary/60" />
+          Click any manuscript to read key findings
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -139,16 +139,16 @@ function ResearchFlipCard({
       >
         {/* ── FRONT ── */}
         <div
-          className="w-full rounded-2xl glass border border-white/5 hover:border-secondary/40 transition-colors duration-300 overflow-hidden group"
+          className="w-full rounded-2xl glass border border-primary/20 hover:border-primary/50 transition-colors duration-300 overflow-hidden group magical-border"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
 
           <div className="relative z-10 flex flex-col p-6 md:p-7">
             {/* Header */}
             <div className="flex items-start justify-between mb-4">
-              <div className="w-11 h-11 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors flex-shrink-0">
-                <BookOpen className="text-secondary w-5 h-5" />
+              <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0 border border-primary/30 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                <BookOpen className="text-primary w-5 h-5" />
               </div>
               <span className="text-[10px] text-secondary/50 flex items-center gap-1 mt-1">
                 <RotateCcw className="w-3 h-3" /> flip for findings
@@ -178,7 +178,7 @@ function ResearchFlipCard({
                 .map((kw) => (
                   <span
                     key={kw}
-                    className="px-2 py-0.5 text-[10px] rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+                    className="px-2 py-0.5 text-[10px] rounded-full bg-secondary/10 text-secondary border border-secondary/20"
                   >
                     {kw}
                   </span>
@@ -189,15 +189,15 @@ function ResearchFlipCard({
 
         {/* ── BACK ── */}
         <div
-          className="absolute inset-0 w-full rounded-2xl border border-secondary/25 overflow-hidden"
+          className="absolute inset-0 w-full rounded-2xl border border-primary/40 overflow-hidden magical-border"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
             background:
-              "linear-gradient(135deg, rgba(168,85,247,0.07) 0%, rgba(6,182,212,0.04) 100%)",
+              "linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(6,182,212,0.06) 100%)",
           }}
         >
-          <div className="absolute inset-0 bg-[#080810]/88 rounded-2xl" />
+          <div className="absolute inset-0 bg-[#050A15]/90 rounded-2xl" />
 
           <div className="relative z-10 flex flex-col p-6 md:p-7">
             {/* Back header */}

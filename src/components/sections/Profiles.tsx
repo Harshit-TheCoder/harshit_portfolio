@@ -26,12 +26,12 @@ export default function Profiles() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Coding
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+              Mystical
             </span>{" "}
-            Profiles
+            Networks
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]" />
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-6">
@@ -46,7 +46,7 @@ export default function Profiles() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className={`flex flex-col items-center justify-center p-6 w-32 h-32 rounded-2xl glass border border-white/10 transition-all ${profile.color}`}
+              className={`relative flex flex-col items-center justify-center p-6 w-32 h-32 rounded-2xl glass border border-primary/20 transition-all magical-border ${profile.color}`}
             >
               <div className="mb-3">
                 {profile.icon}

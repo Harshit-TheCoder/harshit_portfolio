@@ -34,12 +34,12 @@ export default function About() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Initialize
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+              Arcane
             </span>{" "}
             Profile
           </h2>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-start">
@@ -52,7 +52,7 @@ export default function About() {
             className="lg:col-span-7 space-y-6"
           >
             {/* Bio Card */}
-            <motion.div variants={itemVariants} className="p-6 md:p-8 rounded-3xl glass box-glow relative overflow-hidden group border border-white/10">
+            <motion.div variants={itemVariants} className="relative p-6 md:p-8 rounded-3xl glass box-glow overflow-hidden group border border-primary/20 magical-border">
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-secondary" />
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -91,7 +91,7 @@ export default function About() {
             className="lg:col-span-5 space-y-6"
           >
             {/* Education Card */}
-            <motion.div variants={itemVariants} className="p-6 md:p-8 rounded-3xl glass relative overflow-hidden border border-white/5">
+            <motion.div variants={itemVariants} className="relative p-6 md:p-8 rounded-3xl glass overflow-hidden border border-primary/20 magical-border">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
                   <GraduationCap className="w-6 h-6" />
@@ -111,7 +111,7 @@ export default function About() {
             </motion.div>
 
             {/* Certifications Card */}
-            <motion.div variants={itemVariants} className="p-6 md:p-8 rounded-3xl glass relative overflow-hidden border border-white/5 group">
+            <motion.div variants={itemVariants} className="relative p-6 md:p-8 rounded-3xl glass overflow-hidden border border-primary/20 group magical-border">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
                   <Award className="w-6 h-6" />
@@ -146,7 +146,7 @@ export default function About() {
 
 function FeatureCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
-    <div className="p-4 rounded-2xl glass border border-white/5 hover:border-primary/30 transition-all duration-300 group text-center flex flex-col items-center">
+    <div className="relative p-4 rounded-2xl glass border border-primary/20 hover:border-primary/50 transition-all duration-300 group text-center flex flex-col items-center magical-border">
       <div className="mb-3 p-2.5 rounded-xl bg-white/5 group-hover:bg-primary/10 transition-colors">
         {icon}
       </div>

@@ -55,7 +55,7 @@ export default function Projects() {
         >
           <button
             onClick={() => startTransition("/projects")}
-            className="group flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass text-sm md:text-base cursor-pointer"
+            className="relative group flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass text-sm md:text-base cursor-pointer magical-border shadow-[0_0_15px_rgba(212,175,55,0.2)]"
           >
             <span className="font-semibold tracking-wide">Explore All Projects</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

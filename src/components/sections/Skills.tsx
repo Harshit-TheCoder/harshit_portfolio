@@ -22,13 +22,13 @@ export default function Skills() {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Engineering
+              Arcane
             </span>{" "}
-            Arsenal
+            Constellation
           </h2>
-          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-          <p className="mt-4 md:mt-6 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            A strategic deployment of advanced technologies engineered for high-performance AI systems.
+          <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]" />
+          <p className="mt-4 md:mt-6 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4 font-mono">
+            A mystical convergence of advanced technologies engineered for magical AI systems.
           </p>
         </motion.div>
 
@@ -70,17 +70,17 @@ export default function Skills() {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="p-5 md:p-6 rounded-2xl glass border border-white/5 box-glow group"
                 >
-                  <h3 className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4 md:mb-6 capitalize tracking-wider">
+                  <h3 className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4 md:mb-6 capitalize tracking-wider drop-shadow-[0_0_8px_rgba(212,175,55,0.3)]">
                     {category.replace(/([A-Z])/g, ' $1').trim()}
                   </h3>
                   <div className="flex flex-wrap gap-2 md:gap-3">
                     {skills.map((skill) => (
                       <span
                         key={skill.name}
-                        className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-full bg-white/5 border border-white/10 text-muted-foreground group-hover:border-primary/30 group-hover:text-foreground transition-all duration-300"
+                        className="relative flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-full bg-white/5 border border-white/10 text-muted-foreground group-hover:border-primary/50 group-hover:text-primary transition-all duration-300 magical-border"
                       >
                         {skill.icon && (
-                          <div className="relative w-4 h-4 md:w-5 md:h-5 flex-shrink-0">
+                          <div className="relative w-4 h-4 md:w-5 md:h-5 flex-shrink-0 drop-shadow-[0_0_5px_rgba(6,182,212,0.5)]">
                             <Image src={skill.icon} alt={skill.name} fill className="object-contain" />
                           </div>
                         )}
