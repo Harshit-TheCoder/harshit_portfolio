@@ -54,8 +54,8 @@ export default function CertificationsPage() {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: (index % 10) * 0.05 }}
               className="group p-6 rounded-2xl glass border border-white/5 hover:border-secondary/50 transition-all duration-500 box-glow flex flex-col h-full"
             >
               <div className="flex items-start justify-between mb-4">

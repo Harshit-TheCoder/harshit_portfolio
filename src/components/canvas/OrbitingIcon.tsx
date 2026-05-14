@@ -59,9 +59,15 @@ export default function OrbitingIcon({ name, icon, position, visible, index }: T
           <Html distanceFactor={14} center>
             <div className="flex flex-col items-center justify-center p-3 md:p-4 rounded-xl bg-black/70 backdrop-blur-xl border border-primary/30 shadow-[0_0_20px_rgba(6,182,212,0.3)] group transition-all duration-500 scale-100 opacity-100 min-w-[100px] md:min-w-[120px]">
               {icon ? (
-                <div className="relative w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-2.5">
-                  <Image src={icon} alt={name} fill className="object-contain filter brightness-125" />
-                </div>
+                icon.startsWith("devicon") ? (
+                  <div className="flex items-center justify-center mb-2 md:mb-2.5">
+                    <i className={`${icon} text-3xl md:text-4xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] ${icon.includes('github') || icon.includes('nextjs') || icon.includes('flask') ? 'text-white' : ''}`}></i>
+                  </div>
+                ) : (
+                  <div className="relative w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-2.5">
+                    <Image src={icon} alt={name} fill className="object-contain filter brightness-125" />
+                  </div>
+                )
               ) : (
                 <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-primary/10 rounded-full mb-2 md:mb-2.5 border border-primary/20">
                   <span className="text-primary font-bold text-base md:text-lg">{name[0]}</span>

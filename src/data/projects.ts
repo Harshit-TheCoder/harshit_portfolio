@@ -114,50 +114,7 @@ export const projectsData = [
     },
     "image": "/projects/srm-virtual-labs.jpg"
   },
-  {
-    "id": "gps-toll-system",
-    "title": "GPS Toll System",
-    "description": "GPS-based smart toll collection and dynamic pricing simulation platform.",
-    "tags": [
-      "GPS",
-      "Simulation",
-      "Dynamic Pricing",
-      "Smart Toll"
-    ],
-    "features": [
-      "Smart toll collection",
-      "Dynamic pricing simulation",
-      "GPS tracking logic",
-      "Congestion management"
-    ],
-    "links": {
-      "github": "https://github.com/",
-      "demo": "#"
-    },
-    "image": "/projects/gps-toll-system.jpg"
-  },
-  {
-    "id": "restaurant-management",
-    "title": "Restaurant Management System",
-    "description": "Java Swing multilingual food ordering and management application.",
-    "tags": [
-      "Java",
-      "Swing",
-      "Desktop App",
-      "Multilingual"
-    ],
-    "features": [
-      "Multilingual support",
-      "Food ordering system",
-      "Management dashboard",
-      "Desktop application"
-    ],
-    "links": {
-      "github": "https://github.com/",
-      "demo": "#"
-    },
-    "image": "/projects/restaurant.jpg"
-  },
+
   {
     "id": "motionsight",
     "title": "MotionSight",
@@ -238,10 +195,22 @@ export const projectsData = [
   {
     "id": "javabite",
     "title": "JavaBite",
-    "description": "Description coming soon...",
-    "tags": [],
-    "features": [],
+    "description": "Java Swing multilingual food ordering and management application.",
+    "tags": [
+      "Java",
+      "Swing",
+      "Desktop App",
+      "Multilingual"
+    ],
+    "features": [
+      "Multilingual support",
+      "Food ordering system",
+      "Management dashboard",
+      "Desktop application"
+    ],
     "links": {
+      "github": "https://github.com/",
+      "demo": "#",
       "youtube": "https://youtu.be/suaY9CzjRzs?feature=shared"
     },
     "image": "https://img.youtube.com/vi/suaY9CzjRzs/maxresdefault.jpg"
@@ -249,10 +218,22 @@ export const projectsData = [
   {
     "id": "tollmate",
     "title": "TollMate",
-    "description": "Description coming soon...",
-    "tags": [],
-    "features": [],
+    "description": "GPS-based smart toll collection and dynamic pricing simulation platform.",
+    "tags": [
+      "GPS",
+      "Simulation",
+      "Dynamic Pricing",
+      "Smart Toll"
+    ],
+    "features": [
+      "Smart toll collection",
+      "Dynamic pricing simulation",
+      "GPS tracking logic",
+      "Congestion management"
+    ],
     "links": {
+      "github": "https://github.com/",
+      "demo": "#",
       "youtube": "https://youtu.be/ggLwAYLAaEk?feature=shared"
     },
     "image": "https://img.youtube.com/vi/ggLwAYLAaEk/maxresdefault.jpg"

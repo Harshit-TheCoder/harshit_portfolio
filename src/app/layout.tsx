@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }}>
+      <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+      </head>
       <body
         className={`${inter.variable} ${cinzel.variable} antialiased bg-transparent text-foreground relative min-h-screen font-sans`}
       >
