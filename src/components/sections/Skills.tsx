@@ -80,8 +80,14 @@ export default function Skills() {
                         className="relative flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-full bg-white/5 border border-white/10 text-muted-foreground group-hover:border-primary/50 group-hover:text-primary transition-all duration-300 magical-border"
                       >
                         {skill.icon && (
-                          <div className="relative w-4 h-4 md:w-5 md:h-5 flex-shrink-0 drop-shadow-[0_0_5px_rgba(6,182,212,0.5)]">
-                            <Image src={skill.icon} alt={skill.name} fill className="object-contain" />
+                          <div className="relative flex items-center justify-center flex-shrink-0 drop-shadow-[0_0_5px_rgba(6,182,212,0.5)]">
+                            {skill.icon.startsWith("devicon") ? (
+                              <i className={`${skill.icon} text-lg md:text-xl ${skill.icon.includes('github') ? 'text-white' : ''} ${skill.icon.includes('nextjs') ? 'text-white' : ''}`}></i>
+                            ) : (
+                              <div className="relative w-4 h-4 md:w-5 md:h-5">
+                                <Image src={skill.icon} alt={skill.name} fill className="object-contain" />
+                              </div>
+                            )}
                           </div>
                         )}
                         {skill.name}

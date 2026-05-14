@@ -146,14 +146,14 @@ export const achievementsData = [
     "image": "/Courses/GenAI.png"
   },
   {
-    "title": "GenAI1",
+    "title": "GenAI",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/GenAI1.png"
   },
   {
-    "title": "GenAI2",
+    "title": "GenAI",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
@@ -167,28 +167,28 @@ export const achievementsData = [
     "image": "/Courses/GenAIEthics.png"
   },
   {
-    "title": "GenAIEthics2",
+    "title": "GenAIEthics",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/GenAIEthics2.png"
   },
   {
-    "title": "GenAIEthics3",
+    "title": "GenAIEthics",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/GenAIEthics3.png"
   },
   {
-    "title": "Hackathon1",
+    "title": "Hackathon",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/Hackathon1.jpg"
   },
   {
-    "title": "Hackathon2",
+    "title": "Hackathon",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
@@ -223,21 +223,21 @@ export const achievementsData = [
     "image": "/Courses/Insta.jpg"
   },
   {
-    "title": "Insta2",
+    "title": "Insta",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/Insta2.jpg"
   },
   {
-    "title": "Insta3",
+    "title": "Insta",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/Insta3.jpg"
   },
   {
-    "title": "Insta4",
+    "title": "Insta",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
@@ -265,14 +265,14 @@ export const achievementsData = [
     "image": "/Courses/javasprintround2.png"
   },
   {
-    "title": "Mech1",
+    "title": "Mech",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/Mech1.jpg"
   },
   {
-    "title": "Mech2",
+    "title": "Mech",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
@@ -307,14 +307,14 @@ export const achievementsData = [
     "image": "/Courses/NLP.png"
   },
   {
-    "title": "OneStop (1)",
+    "title": "OneStop",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/OneStop (1).png"
   },
   {
-    "title": "OneStop (2)",
+    "title": "OneStop",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
@@ -335,21 +335,21 @@ export const achievementsData = [
     "image": "/Courses/Oyo.jpg"
   },
   {
-    "title": "Oyo2",
+    "title": "Oyo",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/Oyo2.jpg"
   },
   {
-    "title": "Oyo3",
+    "title": "Oyo",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/Oyo3.jpg"
   },
   {
-    "title": "Oyo4",
+    "title": "Oyo",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
@@ -370,21 +370,21 @@ export const achievementsData = [
     "image": "/Courses/sql.png"
   },
   {
-    "title": "sql2",
+    "title": "sql",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/sql2.png"
   },
   {
-    "title": "Teachnook1",
+    "title": "Teachnook",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
     "image": "/Courses/Teachnook1.jpg"
   },
   {
-    "title": "Teachnook2",
+    "title": "Teachnook",
     "issuer": "Course/Certification",
     "date": "Completed",
     "link": "#",
