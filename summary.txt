@@ -1,0 +1,347 @@
+That's actually a great idea for a portfolio. Instead of writing:
+
+"Implemented Factory Pattern, Strategy Pattern, Observer Pattern..."
+
+you should explain why each pattern was used in the project.
+
+Project 1: Food Delivery System (Swiggy/Zomato Clone)
+Strategy Pattern
+
+Use: Delivery Partner Assignment
+
+Order
+ ↓
+Assign Partner
+
+Different assignment algorithms:
+
+First Available Partner
+Highest Rated Partner
+Nearest Partner
+
+Benefit:
+
+New assignment logic can be added without modifying existing code.
+
+Factory Pattern
+
+Use: Payment Method Creation
+
+UPI
+Card
+Cash
+
+Factory creates the correct payment processor.
+
+Benefit:
+
+Client code remains independent of concrete payment implementations.
+
+Builder Pattern
+
+Use: Order Creation
+
+Order
+ ├── Customer
+ ├── Restaurant
+ ├── Food Items
+ ├── Delivery Partner
+
+Complex object construction.
+
+Benefit:
+
+Readable and extensible order creation.
+
+Observer Pattern
+
+Use: Order Notifications
+
+Order Status Changed
+ ↓
+Customer Notification
+Restaurant Notification
+
+Benefit:
+
+Notifications can be added without modifying order logic.
+
+Singleton Pattern
+
+Use: Payment Repository
+
+One Payment Store
+
+Single shared repository instance.
+
+Benefit:
+
+Centralized payment tracking.
+
+Template Method Pattern
+
+Use: Payment Workflow
+
+Validate
+ ↓
+Process Payment
+ ↓
+Generate Receipt
+
+Shared workflow with custom payment implementations.
+
+Benefit:
+
+Code reuse and consistency.
+
+Facade Pattern
+
+Use: FoodDeliveryFacade
+
+Client
+ ↓
+Facade
+ ↓
+OrderService
+DeliveryService
+PaymentService
+
+Benefit:
+
+Simplified interaction with complex subsystems.
+
+Portfolio Summary
+Implemented a Food Delivery System using Strategy, Factory, Builder, Observer, Singleton, Template Method, and Facade patterns to model order management, delivery partner allocation, payment processing, notifications, and service orchestration.
+Project 2: Movie Ticket Booking System (BookMyShow Clone)
+Repository Pattern
+
+Use: Booking Storage
+
+BookingRepository
+
+Stores and retrieves bookings.
+
+Benefit:
+
+Separates persistence from business logic.
+
+Command Pattern
+
+Use: Booking Actions
+
+Book Seat
+Cancel Booking
+
+Each action represented as a command.
+
+Benefit:
+
+Supports extensibility, logging, and future undo capabilities.
+
+Proxy Pattern
+
+Use: Booking Access Control
+
+User
+ ↓
+BookingServiceProxy
+ ↓
+BookingService
+
+Authentication and logging before booking.
+
+Benefit:
+
+Cross-cutting concerns separated from business logic.
+
+Composite Pattern
+
+Use: Theatre Hierarchy
+
+Theatre
+ ├── Screen
+ │    ├── Seat
+
+Treats theatre structure uniformly.
+
+Benefit:
+
+Recursive hierarchy handling.
+
+Iterator Pattern
+
+Use: Available Seat Traversal
+
+Seat Collection
+ ↓
+Iterator
+
+Returns only available seats.
+
+Benefit:
+
+Encapsulates traversal logic.
+
+Null Object Pattern
+
+Use: Guest User
+
+User Not Found
+ ↓
+GuestUser
+
+Avoids null checks.
+
+Benefit:
+
+Safer and cleaner code.
+
+Memento Pattern
+
+Use: Booking Rollback
+
+Save State
+ ↓
+Payment Failure
+ ↓
+Restore State
+
+Benefit:
+
+Undo and recovery support.
+
+Portfolio Summary
+Built a Movie Ticket Booking System implementing Repository, Command, Proxy, Composite, Iterator, Null Object, and Memento patterns to manage bookings, seat traversal, access control, theatre hierarchies, and state recovery workflows.
+Project 3: Document Editor (Google Docs Clone)
+Prototype Pattern
+
+Use: Copy / Paste
+
+Paragraph Clone
+Image Clone
+Table Clone
+
+Benefit:
+
+Efficient duplication of document elements.
+
+Flyweight Pattern
+
+Use: Shared Font Styles
+
+Arial 12 Bold
+
+Shared across thousands of characters.
+
+Benefit:
+
+Reduces memory usage.
+
+Visitor Pattern
+
+Use: Document Operations
+
+PDF Export
+Word Count
+Spell Check
+
+Benefit:
+
+Add operations without modifying element classes.
+
+Adapter Pattern
+
+Use: Third-Party Export SDKs
+
+Adobe PDF
+MS Word
+
+Unified exporter interface.
+
+Benefit:
+
+Decouples application from external APIs.
+
+Bridge Pattern
+
+Use: Renderer Abstraction
+
+PDF Document
+Word Document
+
+Windows Renderer
+Linux Renderer
+
+Benefit:
+
+Prevents class explosion.
+
+Mediator Pattern
+
+Use: Real-Time Collaboration
+
+Users
+ ↓
+Mediator
+ ↓
+Broadcast Updates
+
+Benefit:
+
+Reduces direct dependencies between collaborators.
+
+Decorator Pattern
+
+Use: Text Formatting
+
+Bold
+Italic
+Underline
+
+Benefit:
+
+Dynamic feature composition.
+
+State Pattern
+
+Use: Document Modes
+
+Editing
+Review
+Read Only
+
+Benefit:
+
+Behavior changes based on current state.
+
+Chain of Responsibility
+
+Use: Document Validation Pipeline
+
+Spell Check
+ ↓
+Grammar Check
+ ↓
+Profanity Check
+
+Benefit:
+
+Flexible validation workflow.
+
+Abstract Factory Pattern
+
+Use: Document Element Families
+
+Google Docs Factory
+MS Word Factory
+
+Creates related document components.
+
+Benefit:
+
+Supports multiple document ecosystems consistently.
+
+Portfolio Summary
+Developed a collaborative Document Editor applying Prototype, Flyweight, Visitor, Adapter, Bridge, Mediator, Decorator, State, Chain of Responsibility, and Abstract Factory patterns for document rendering, collaboration, formatting, validation, export integration, and memory optimization.
+
+Designed and implemented three object-oriented systems—a Food Delivery Platform, Movie Ticket Booking System, and Collaborative Document Editor—to master Low-Level Design concepts. Applied 20+ design patterns including Strategy, Factory, Builder, Observer, Singleton, Command, Proxy, Composite, Iterator, Memento, Prototype, Flyweight, Visitor, Adapter, Bridge, Mediator, Decorator, State, Chain of Responsibility, and Abstract Factory while adhering to SOLID principles and clean architecture practices.

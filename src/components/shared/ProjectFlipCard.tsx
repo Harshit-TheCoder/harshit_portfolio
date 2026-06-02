@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ExternalLink, Play, RotateCcw } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import { useTransition } from "@/components/transition/PageTransitionProvider";
 
 export type ProjectType = {
   id: string | number;
@@ -12,7 +13,7 @@ export type ProjectType = {
   description: string;
   features: string[];
   tags: string[];
-  links: { github?: string; demo?: string; youtube?: string; live?: string };
+  links: { github?: string; demo?: string; youtube?: string; live?: string; internal?: string };
   image?: string;
 };
 
@@ -24,6 +25,7 @@ export function ProjectFlipCard({
   index: number;
 }) {
   const [flipped, setFlipped] = useState(false);
+  const { startTransition } = useTransition();
 
   return (
     <motion.div
@@ -206,6 +208,17 @@ export function ProjectFlipCard({
                 >
                   <ExternalLink size={12} /> Live Demo
                 </a>
+              )}
+              {project.links.internal && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    startTransition(project.links.internal!);
+                  }}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs text-primary hover:bg-primary/20 transition-colors"
+                >
+                  <ExternalLink size={12} /> View Projects
+                </button>
               )}
               {project.links.youtube && (
                 <a

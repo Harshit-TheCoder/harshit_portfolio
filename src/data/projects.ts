@@ -23,6 +23,26 @@ export const projectsData = [
     "image": "/projects/bhailang.jpg"
   },
   {
+    "id": "lld-projects",
+    "title": "Low Level Design Projects",
+    "description": "A collection of advanced Low Level Design and Object Oriented Design implementations including Swiggy, BookMyShow, and Google Docs clones built with Java and Design Patterns.",
+    "tags": [
+      "Low Level Design",
+      "Object Oriented Design",
+      "Design Patterns",
+      "Java"
+    ],
+    "features": [
+      "Extensive use of Design Patterns",
+      "SOLID principles",
+      "Scalable architectures",
+      "Clean code practices"
+    ],
+    "links": {
+      "internal": "/lld-projects"
+    }
+  },
+  {
     "id": "nexus-ai",
     "title": "Nexus AI Control Tower",
     "description": "AI-powered real-time supply chain orchestration platform with multi-agent architecture, anomaly detection, routing intelligence, and live telemetry visualization.",

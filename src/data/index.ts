@@ -5,3 +5,4 @@ export * from './experience';
 export * from './projects';
 export * from './research';
 export * from './achievements';
+export * from './lld-projects';
