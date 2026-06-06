@@ -1,0 +1,169 @@
+Group 0
+  62 -> 63 oides decempunctata
+  75 -> 76  Phyllocoptes oleiverus ashmead
+
+Group 1
+  26 -> 27 peach borer
+  30 -> 31 wheat blossom midge
+  47 -> 48 tarnished plant bug
+
+Group 2
+  11 -> 12 rice leafhopper
+  12 -> 13 grain spreader thrips
+  13 -> 14 rice shell pest
+  15 -> 16 mole cricket
+  18 -> 19 black cutworm
+  34 -> 35 wheat sawfly
+  35 -> 36 cerodonta denticornis
+  38 -> 39 cabbage army worm
+  42 -> 43 beet weevil
+  65 -> 66 parathrene regalis
+  87 -> 88  Adristyrannus
+  88 -> 89  Phyllocnistis citrella Stainton
+  99 -> 100 Rhytidodera bowrinii white
+
+Group 3
+  33 -> 34 wheat phloeothrips
+  46 -> 47 alfalfa plant bug
+  48 -> 49 Locustoidea
+  49 -> 50 lytta polita
+  53 -> 54 odontothrips loti
+  67 -> 68 Lycorma delicatula
+  101 -> 102 Cicadellidae
+
+Group 4
+  96 -> 97  Deporaus marginatus Pascoe
+  97 -> 98  Chlumetia transversa
+
+Group 5
+  4 -> 5  yellow rice borer
+  5 -> 6  rice gall midge
+  43 -> 44 sericaorient alismots chulsky
+  44 -> 45 alfalfa weevil
+  45 -> 46 flax budworm
+  55 -> 56 alfalfa seed chalcid
+  68 -> 69  Xylotrechus
+  70 -> 71  Miridae
+  100 -> 101 Sternochetus frigidus
+
+Group 6
+  20 -> 21 yellow cutworm
+  66 -> 67 Ampelophaga
+
+Group 7
+  19 -> 20 large cutworm
+  22 -> 23 corn borer
+  23 -> 24 army worm
+  24 -> 25 aphids
+  50 -> 51 legume blister beetle
+  52 -> 53 therioaphis maculata Buckton
+  90 -> 91  Toxoptera aurantii
+  92 -> 93  Scirtothrips dorsalis Hood
+  93 -> 94  Dasineura sp
+  95 -> 96  Salurnis marginella Guerr
+
+Group 8
+  16 -> 17 wireworm
+  27 -> 28 english grain aphid
+  28 -> 29 green bug
+  74 -> 75  Panonchus citri McGregor
+
+Group 9
+  78 -> 79  Ceroplastes rubens
+
+Group 10
+  31 -> 32 penthaleus major
+  32 -> 33 longlegged spider mite
+  37 -> 38 flea beetle
+
+Group 11
+  81 -> 82  Nipaecoccus vastalor
+
+Group 12
+  6 -> 7  Rice Stemfly
+  29 -> 30 bird cherry-oataphid
+  51 -> 52 blister beetle
+
+Group 13
+  77 -> 78  Unaspis yanonensis
+  79 -> 80  Chrysomphalus aonidum
+
+Group 14
+  2 -> 3  paddy stem maggot
+  3 -> 4  asiatic rice borer
+  39 -> 40 beet army worm
+  41 -> 42 meadow moth
+  98 -> 99  Mango flat beak leafhopper
+
+Group 15
+  0 -> 1  rice leaf roller
+  1 -> 2  rice leaf caterpillar
+  7 -> 8  brown plant hopper
+  14 -> 15 grub
+  17 -> 18 white margined moth
+  25 -> 26 Potosiabre vitarsis
+  36 -> 37 beet fly
+  58 -> 59 Limacodidae
+  69 -> 70  Cicadella viridis
+  80 -> 81  Parlatoria zizyphus Lucus
+  91 -> 92  Aphis citricola Vander Goot
+
+Group 16
+  57 -> 58 Apolygus lucorum
+  59 -> 60 Viteus vitifoliae
+
+Group 17
+  72 -> 73  Erythroneura apicalis
+
+Group 18
+  8 -> 9  white backed plant hopper
+
+Group 19
+  64 -> 65 Pseudococcus comstocki Kuwana
+
+Group 20
+  56 -> 57 Pieris canidia
+
+Group 21
+  73 -> 74  Papilio xuthus
+
+Group 22
+  83 -> 84  Tetradacus c Bactrocera minax
+
+Group 23
+  61 -> 62 Brevipoalpus lewisi McGregor
+
+Group 24
+  71 -> 72  Trialeurodes vaporariorum
+
+Group 25
+  40 -> 41 Beet spot flies
+
+Group 26
+  84 -> 85  Dacus dorsalis(Hendel)
+  85 -> 86  Bactrocera tsuneonis
+  86 -> 87  Prodenia litura
+
+Group 27
+  54 -> 55 Thrips
+
+Group 28
+  89 -> 90  Toxoptera citricidus
+  94 -> 95  Lawana imitata Melichar
+
+Group 29
+  10 -> 11 rice water weevil
+
+Group 30
+  21 -> 22 red spider
+
+Group 31
+  60 -> 61 Colomerus vitis
+
+Group 32
+  63 -> 64 Polyphagotars onemus latus
+  76 -> 77  Icerya purchasi Maskell
+  82 -> 83  Aleurocanthus spiniferus
+
+Group 33
+  9 -> 10 small brown plant hopper

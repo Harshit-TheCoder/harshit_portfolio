@@ -1,0 +1,32 @@
+Deployment Priorities
+
+Tier A (Highest Priority — Build First)
+
+These are the pests I would absolutely focus on for AnnaDrishti and Vision models.
+
+- **Rice Ecosystem**: Brown Plant Hopper, White Backed Plant Hopper, Small Brown Plant Hopper, Rice Leaf Roller, Rice Leaf Caterpillar, Rice Gall Midge, Yellow Rice Borer, Asiatic Rice Borer, Paddy Stem Maggot, Rice Stemfly
+- **Wheat Ecosystem**: English Grain Aphid, Bird Cherry-Oat Aphid, Green Bug, Wheat Blossom Midge, Wheat Sawfly
+- **Maize Ecosystem**: Corn Borer, Army Worm, Beet Army Worm, Black Cutworm, Large Cutworm
+- **Universal Major Pests**: Aphids, Thrips, Wireworm, Grub, Mole Cricket
+
+Tier B (Very Valuable)
+
+Good training targets.
+
+Rice Water Weevil, Rice Leafhopper, Grain Spreader Thrips, Peach Borer, Long Legged Spider Mite, Flea Beetle, Beet Fly, Beet Weevil, Alfalfa Weevil, Tarnished Plant Bug, Legume Blister Beetle, Blister Beetle, *Pieris canidia*, *Apolygus lucorum*, *Lycorma delicatula*
+
+Tier C (Specialized Crop Pests)
+
+Useful later.
+
+*Viteus vitifoliae*, *Colomerus vitis*, *Brevipalpus lewisi*, *Pseudococcus comstocki*, *Ampelophaga*, *Xylotrechus*, *Cicadella viridis*, *Trialeurodes vaporariorum*, *Erythroneura apicalis*, *Papilio xuthus*, *Panonychus citri*, *Phyllocoptes oleivorus*, *Icerya purchasi*, *Unaspis yanonensis*, *Ceroplastes rubens*, *Chrysomphalus aonidum*, *Aleurocanthus spiniferus*, *Toxoptera citricidus*, *Toxoptera aurantii*, *Aphis citricola*
+
+Tier D (Long Tail)
+
+These appear less frequently or have limited deployment value.
+
+Rice Shell Pest, White Margined Moth, Yellow Cutworm, Red Spider, *Potosia brevitarsis*, *Penthaleus major*, Wheat Phloeothrips, *Cerodonta denticornis*, Meadow Moth, *Serica orientalis*, Flax Budworm, Alfalfa Plant Bug, *Lytta polita*, *Therioaphis maculata*, *Odontothrips loti*, Alfalfa Seed Chalcid, *Polyphagotarsonemus latus*, *Parathrene regalis*, Miridae, *Dasineura* sp., *Lawana imitata*, *Salurnis marginella*, *Deporaus marginatus*, *Chlumetia transversa*, Mango Flat Beak Leafhopper, *Rhytidodera bowringii*, *Sternochetus frigidus*, Cicadellidae
+
+Tier E (Low Priority / Rare / Hard to Collect)
+
+*Adristyrannus*, Limacodidae, *Nipaecoccus vastator*, *Dacus dorsalis*, *Bactrocera minax*, *Bactrocera tsuneonis*, *Prodenia litura*, *Scirtothrips dorsalis*, *Oides decempunctata*, *Phyllocnistis citrella*, *Tetradacus c.*, Lawana-related variants, Miscellaneous taxonomic entries, Generic unresolved species labels

@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Timeline from "@/components/sections/Timeline";
+import Startup from "@/components/sections/Startup";
 import Projects from "@/components/sections/Projects";
 import Research from "@/components/sections/Research";
 import Achievements from "@/components/sections/Achievements";
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Skills />
       <Timeline />
+      <Startup />
       <Projects />
       <Research />
       <Achievements />

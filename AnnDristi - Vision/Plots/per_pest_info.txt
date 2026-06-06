@@ -1,0 +1,112 @@
+| #  | Pest                      | Type                     | Order        | Family          | Origin                 |
+| -- | ------------------------- | ------------------------ | ------------ | --------------- | ---------------------- |
+| 1  | Rice Leaf Roller          | Leaf-rolling caterpillar | Lepidoptera  | Crambidae       | South & Southeast Asia |
+| 2  | Rice Leaf Caterpillar     | Defoliating caterpillar  | Lepidoptera  | Noctuidae       | Asia                   |
+| 3  | Paddy Stem Maggot         | Stem-mining fly          | Diptera      | Chloropidae     | Asia                   |
+| 4  | Asiatic Rice Borer        | Stem borer moth          | Lepidoptera  | Crambidae       | East Asia              |
+| 5  | Yellow Rice Borer         | Stem borer moth          | Lepidoptera  | Crambidae       | South Asia             |
+| 6  | Rice Gall Midge           | Gall-forming fly         | Diptera      | Cecidomyiidae   | Asia                   |
+| 7  | Rice Stemfly              | Stem-feeding fly         | Diptera      | Chloropidae     | Asia                   |
+| 8  | Brown Plant Hopper        | Sap-sucking hopper       | Hemiptera    | Delphacidae     | Asia                   |
+| 9  | White Backed Plant Hopper | Sap-sucking hopper       | Hemiptera    | Delphacidae     | Asia                   |
+| 10 | Small Brown Plant Hopper  | Sap-sucking hopper       | Hemiptera    | Delphacidae     | East Asia              |
+| 11 | Rice Water Weevil         | Root-feeding weevil      | Coleoptera   | Curculionidae   | North America          |
+| 12 | Rice Leafhopper           | Sap-sucking leafhopper   | Hemiptera    | Cicadellidae    | Asia                   |
+| 13 | Grain Spreader Thrips     | Grain pest thrips        | Thysanoptera | Phlaeothripidae | Worldwide              |
+| 14 | Rice Shell Pest           | Stored grain pest        | Various      | Various         | Asia                   |
+| 15 | Grub                      | Beetle larva             | Coleoptera   | Scarabaeidae    | Worldwide              |
+| 16 | Mole Cricket              | Soil burrower            | Orthoptera   | Gryllotalpidae  | Worldwide              |
+| 17 | Wireworm                  | Click beetle larva       | Coleoptera   | Elateridae      | Worldwide              |
+| 18 | White Margined Moth       | Moth defoliator          | Lepidoptera  | Noctuidae       | Asia                   |
+| 19 | Black Cutworm             | Cutworm caterpillar      | Lepidoptera  | Noctuidae       | Americas               |
+| 20 | Large Cutworm             | Cutworm caterpillar      | Lepidoptera  | Noctuidae       | Eurasia                |
+| 21 | Yellow Cutworm            | Cutworm caterpillar      | Lepidoptera  | Noctuidae       | Asia                   |
+| 22 | Red Spider Mite           | Plant mite               | Acari        | Tetranychidae   | Worldwide              |
+| 23 | Corn Borer                | Stem borer moth          | Lepidoptera  | Crambidae       | Europe/Asia            |
+| 24 | Army Worm                 | Defoliating caterpillar  | Lepidoptera  | Noctuidae       | Worldwide              |
+| 25 | Aphids                    | Sap-sucking insects      | Hemiptera    | Aphididae       | Worldwide              |
+| #  | Pest                                | Type               | Primary Crop        | Order        | Family               | Origin        | Feeding Behavior                         |
+| -- | ----------------------------------- | ------------------ | ------------------- | ------------ | -------------------- | ------------- | ---------------------------------------- |
+| 26 | Potosia brevitarsis                 | Scarab Beetle      | Fruits, crops       | Coleoptera   | Scarabaeidae         | East Asia     | Adult fruit feeding, larval root feeding |
+| 27 | Peach Borer                         | Borer Moth         | Peach, stone fruits | Lepidoptera  | Sesiidae             | Asia/Europe   | Stem and trunk boring                    |
+| 28 | English Grain Aphid                 | Aphid              | Wheat               | Hemiptera    | Aphididae            | Europe        | Sap sucking                              |
+| 29 | Green Bug                           | Aphid              | Cereals             | Hemiptera    | Aphididae            | Europe/Asia   | Sap sucking                              |
+| 30 | Bird Cherry-Oat Aphid               | Aphid              | Wheat, oats         | Hemiptera    | Aphididae            | Europe        | Sap sucking                              |
+| 31 | Wheat Blossom Midge                 | Gall Midge         | Wheat               | Diptera      | Cecidomyiidae        | Europe        | Grain feeding                            |
+| 32 | Penthaleus major                    | Earth Mite         | Wheat               | Acari        | Penthaleidae         | Europe        | Leaf feeding                             |
+| 33 | Long Legged Spider Mite             | Spider Mite        | Cereals             | Acari        | Tetranychidae        | Worldwide     | Cell sap feeding                         |
+| 34 | Wheat Phloeothrips                  | Thrips             | Wheat               | Thysanoptera | Phlaeothripidae      | Europe/Asia   | Sap sucking                              |
+| 35 | Wheat Sawfly                        | Sawfly             | Wheat               | Hymenoptera  | Cephidae             | Eurasia       | Stem boring                              |
+| 36 | Cerodonta denticornis               | Leaf Miner Fly     | Beet crops          | Diptera      | Agromyzidae          | Europe        | Leaf mining                              |
+| 37 | Beet Fly                            | Leaf Miner Fly     | Sugar Beet          | Diptera      | Anthomyiidae         | Europe        | Leaf mining                              |
+| 38 | Flea Beetle                         | Beetle             | Multiple crops      | Coleoptera   | Chrysomelidae        | Worldwide     | Leaf feeding                             |
+| 39 | Cabbage Army Worm                   | Caterpillar        | Crucifers           | Lepidoptera  | Noctuidae            | Asia          | Defoliation                              |
+| 40 | Beet Army Worm                      | Caterpillar        | Vegetables          | Lepidoptera  | Noctuidae            | Americas      | Defoliation                              |
+| 41 | Beet Spot Flies                     | Fly                | Sugar Beet          | Diptera      | Tephritidae          | Europe        | Leaf damage                              |
+| 42 | Meadow Moth                         | Moth               | Cereals             | Lepidoptera  | Crambidae            | Eurasia       | Leaf feeding                             |
+| 43 | Beet Weevil                         | Weevil             | Sugar Beet          | Coleoptera   | Curculionidae        | Europe        | Root and leaf feeding                    |
+| 44 | Serica orientalis (Oriental Beetle) | Scarab Beetle      | Grasses, crops      | Coleoptera   | Scarabaeidae         | East Asia     | Root feeding                             |
+| 45 | Alfalfa Weevil                      | Weevil             | Alfalfa             | Coleoptera   | Curculionidae        | Europe        | Leaf feeding                             |
+| 46 | Flax Budworm                        | Caterpillar        | Flax                | Lepidoptera  | Tortricidae          | Europe        | Bud feeding                              |
+| 47 | Alfalfa Plant Bug                   | Plant Bug          | Alfalfa             | Hemiptera    | Miridae              | North America | Sap sucking                              |
+| 48 | Tarnished Plant Bug                 | Plant Bug          | Multiple crops      | Hemiptera    | Miridae              | North America | Sap sucking                              |
+| 49 | Locustoidea                         | Grasshopper/Locust | Multiple crops      | Orthoptera   | Locustidae/Acrididae | Worldwide     | Leaf feeding                             |
+| 50 | Lytta polita                        | Blister Beetle     | Legumes             | Coleoptera   | Meloidae             | Asia          | Flower and foliage feeding               |
+| #  | Pest                                              | Type                  | Primary Crop       | Order        | Family         | Origin               | Feeding Behavior           |
+| -- | ------------------------------------------------- | --------------------- | ------------------ | ------------ | -------------- | -------------------- | -------------------------- |
+| 51 | Legume Blister Beetle                             | Beetle                | Legumes            | Coleoptera   | Meloidae       | Asia                 | Flower and foliage feeding |
+| 52 | Blister Beetle                                    | Beetle                | Various crops      | Coleoptera   | Meloidae       | Worldwide            | Leaf and flower feeding    |
+| 53 | *Therioaphis maculata* (Spotted Alfalfa Aphid)    | Aphid                 | Alfalfa            | Hemiptera    | Aphididae      | Mediterranean Region | Sap sucking                |
+| 54 | *Odontothrips loti*                               | Thrips                | Legumes            | Thysanoptera | Thripidae      | Europe/Asia          | Sap sucking                |
+| 55 | Thrips (Generic)                                  | Thrips                | Various crops      | Thysanoptera | Thripidae      | Worldwide            | Sap sucking                |
+| 56 | Alfalfa Seed Chalcid                              | Wasp                  | Alfalfa            | Hymenoptera  | Eurytomidae    | Europe               | Seed feeding               |
+| 57 | *Pieris canidia* (Indian Cabbage White)           | Butterfly Caterpillar | Crucifers          | Lepidoptera  | Pieridae       | South Asia           | Leaf feeding               |
+| 58 | *Apolygus lucorum*                                | Plant Bug             | Cotton, Fruits     | Hemiptera    | Miridae        | East Asia            | Sap sucking                |
+| 59 | Limacodidae (Slug Caterpillar)                    | Caterpillar           | Trees, Fruits      | Lepidoptera  | Limacodidae    | Worldwide            | Leaf feeding               |
+| 60 | *Viteus vitifoliae* (Grape Phylloxera)            | Aphid-like Insect     | Grapes             | Hemiptera    | Phylloxeridae  | North America        | Root and leaf feeding      |
+| 61 | *Colomerus vitis*                                 | Gall Mite             | Grapes             | Acari        | Eriophyidae    | Europe               | Sap sucking                |
+| 62 | *Brevipalpus lewisi*                              | False Spider Mite     | Citrus, Grapes     | Acari        | Tenuipalpidae  | Asia                 | Cell sap feeding           |
+| 63 | *Oides decempunctata*                             | Leaf Beetle           | Grapes             | Coleoptera   | Chrysomelidae  | Asia                 | Leaf feeding               |
+| 64 | *Polyphagotarsonemus latus* (Broad Mite)          | Mite                  | Vegetables, Fruits | Acari        | Tarsonemidae   | Tropical Regions     | Sap sucking                |
+| 65 | *Pseudococcus comstocki*                          | Mealybug              | Fruits             | Hemiptera    | Pseudococcidae | East Asia            | Sap sucking                |
+| 66 | *Parathrene regalis*                              | Clearwing Borer       | Fruit Trees        | Lepidoptera  | Sesiidae       | Asia                 | Stem boring                |
+| 67 | *Ampelophaga* spp.                                | Hawk Moth Caterpillar | Grapes             | Lepidoptera  | Sphingidae     | Asia                 | Leaf feeding               |
+| 68 | *Lycorma delicatula* (Spotted Lanternfly)         | Planthopper           | Grapes, Trees      | Hemiptera    | Fulgoridae     | China                | Sap sucking                |
+| 69 | *Xylotrechus* spp.                                | Longhorn Beetle       | Trees, Vines       | Coleoptera   | Cerambycidae   | Asia                 | Wood boring                |
+| 70 | *Cicadella viridis*                               | Leafhopper            | Grasses            | Hemiptera    | Cicadellidae   | Europe/Asia          | Sap sucking                |
+| 71 | Miridae (Plant Bugs)                              | Plant Bug             | Various crops      | Hemiptera    | Miridae        | Worldwide            | Sap sucking                |
+| 72 | *Trialeurodes vaporariorum* (Greenhouse Whitefly) | Whitefly              | Vegetables         | Hemiptera    | Aleyrodidae    | South America        | Sap sucking                |
+| 73 | *Erythroneura apicalis*                           | Leafhopper            | Grapes             | Hemiptera    | Cicadellidae   | Asia                 | Sap sucking                |
+| 74 | *Papilio xuthus* (Asian Swallowtail)              | Butterfly Caterpillar | Citrus             | Lepidoptera  | Papilionidae   | East Asia            | Leaf feeding               |
+| 75 | *Panonychus citri* (Citrus Red Mite)              | Mite                  | Citrus             | Acari        | Tetranychidae  | Asia                 | Cell sap feeding           |
+| #   | Pest                                               | Type                   | Primary Crop    | Order        | Family                   | Origin         | Feeding Behavior         |
+| --- | -------------------------------------------------- | ---------------------- | --------------- | ------------ | ------------------------ | -------------- | ------------------------ |
+| 76  | *Phyllocoptes oleivorus* (Citrus Rust Mite)        | Mite                   | Citrus          | Acari        | Eriophyidae              | Asia           | Sap sucking              |
+| 77  | *Icerya purchasi* (Cottony Cushion Scale)          | Scale Insect           | Citrus          | Hemiptera    | Monophlebidae            | Australia      | Sap sucking              |
+| 78  | *Unaspis yanonensis* (Arrowhead Scale)             | Scale Insect           | Citrus          | Hemiptera    | Diaspididae              | East Asia      | Sap sucking              |
+| 79  | *Ceroplastes rubens* (Red Wax Scale)               | Scale Insect           | Citrus          | Hemiptera    | Coccidae                 | Asia           | Sap sucking              |
+| 80  | *Chrysomphalus aonidum* (Florida Red Scale)        | Scale Insect           | Citrus          | Hemiptera    | Diaspididae              | Southeast Asia | Sap sucking              |
+| 81  | *Parlatoria ziziphi*                               | Scale Insect           | Citrus          | Hemiptera    | Diaspididae              | Middle East    | Sap sucking              |
+| 82  | *Nipaecoccus vastator*                             | Mealybug               | Citrus          | Hemiptera    | Pseudococcidae           | Tropical Asia  | Sap sucking              |
+| 83  | *Aleurocanthus spiniferus* (Orange Spiny Whitefly) | Whitefly               | Citrus          | Hemiptera    | Aleyrodidae              | Asia           | Sap sucking              |
+| 84  | *Bactrocera minax*                                 | Fruit Fly              | Citrus          | Diptera      | Tephritidae              | China          | Fruit boring             |
+| 85  | *Bactrocera dorsalis* (Oriental Fruit Fly)         | Fruit Fly              | Mango, Citrus   | Diptera      | Tephritidae              | Southeast Asia | Fruit boring             |
+| 86  | *Bactrocera tsuneonis*                             | Fruit Fly              | Citrus          | Diptera      | Tephritidae              | East Asia      | Fruit boring             |
+| 87  | *Spodoptera litura* (Prodenia litura)              | Armyworm Caterpillar   | Vegetables      | Lepidoptera  | Noctuidae                | Asia           | Leaf feeding             |
+| 88  | Adristyrannus                                      | Leafhopper/Planthopper | Various crops   | Hemiptera    | Uncertain Classification | Asia           | Sap sucking              |
+| 89  | *Phyllocnistis citrella* (Citrus Leaf Miner)       | Leaf Miner Moth        | Citrus          | Lepidoptera  | Gracillariidae           | Asia           | Leaf mining              |
+| 90  | *Toxoptera citricidus* (Brown Citrus Aphid)        | Aphid                  | Citrus          | Hemiptera    | Aphididae                | Asia           | Sap sucking              |
+| 91  | *Toxoptera aurantii* (Black Citrus Aphid)          | Aphid                  | Citrus          | Hemiptera    | Aphididae                | Asia           | Sap sucking              |
+| 92  | *Aphis citricola*                                  | Aphid                  | Citrus          | Hemiptera    | Aphididae                | Asia           | Sap sucking              |
+| 93  | *Scirtothrips dorsalis*                            | Thrips                 | Citrus, Mango   | Thysanoptera | Thripidae                | South Asia     | Sap sucking              |
+| 94  | *Dasineura* spp.                                   | Gall Midge             | Multiple crops  | Diptera      | Cecidomyiidae            | Worldwide      | Gall formation           |
+| 95  | *Lawana imitata*                                   | Planthopper            | Tropical plants | Hemiptera    | Flatidae                 | Southeast Asia | Sap sucking              |
+| 96  | *Salurnis marginella*                              | Planthopper            | Tropical plants | Hemiptera    | Flatidae                 | Southeast Asia | Sap sucking              |
+| 97  | *Deporaus marginatus*                              | Leaf-Rolling Weevil    | Trees           | Coleoptera   | Attelabidae              | Asia           | Leaf rolling and feeding |
+| 98  | *Chlumetia transversa*                             | Shoot Borer Moth       | Mango           | Lepidoptera  | Noctuidae                | South Asia     | Stem boring              |
+| 99  | Mango Flat Beak Leafhopper                         | Leafhopper             | Mango           | Hemiptera    | Cicadellidae             | South Asia     | Sap sucking              |
+| 100 | *Rhytidodera bowringii*                            | Longhorn Beetle        | Trees           | Coleoptera   | Cerambycidae             | Asia           | Wood boring              |
+| 101 | *Sternochetus frigidus*                            | Mango Seed Weevil      | Mango           | Coleoptera   | Curculionidae            | Southeast Asia | Seed boring              |
+| 102 | Cicadellidae (Generic Leafhopper Group)            | Leafhopper             | Various crops   | Hemiptera    | Cicadellidae             | Worldwide      | Sap sucking              |
+
+
